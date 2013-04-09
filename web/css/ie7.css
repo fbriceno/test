@@ -1,0 +1,17 @@
+/* IE7 fixes*/
+
+#m_ingresar .border {
+	width: 214px;
+	margin: 0 auto;
+}
+
+/* Ignora padding de #footer */
+#footer span { 
+	margin-top: 74px;
+}
+/* Ignora padding de último <li> */
+ul.formColumns { margin-bottom: 20px;}
+.listado { padding-bottom: 20px; }
+.asideList { padding-bottom: 40px;}
+
+body#s_editarficha #imageNav { margin-bottom: 0px; }

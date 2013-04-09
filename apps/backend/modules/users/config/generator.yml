@@ -1,0 +1,56 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           users
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              users
+    plural:                userss
+    route_prefix:          users
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        created_at:   { label: Publicado, date_format: dd/MM/yyyy}
+        use_id:       { label: Usuario }
+        use_name:       { label: Nombre }
+        use_first_name:       { label: Nombres }
+        use_last_name:       { label: Apellidos }
+        use_gender:       { label: Genero }
+        use_birthday:       { label: Cumpleanos}
+        use_email:       { label: email }
+      list:
+        title:        Lista de Usuarios
+        display:     [use_id, use_name, use_gender, use_birthday, use_email, created_at]
+        batch_actions:
+          #aprobar:  ~
+          #rechazar: ~
+          _delete:   { label: Eliminar  }
+        max_per_page:   100
+        object_actions:
+          _edit:     { label: Editar  }
+          _delete:   { label: Eliminar  }
+        actions: 
+          _new: { label: "Nuevo Usuario" }
+      filter:  
+        display:      [use_id, use_name, use_first_name, use_last_name, use_gender, use_birthday, use_email]
+      form:    ~
+      edit:
+        display:  
+           Informacion Usuario:     [use_id, use_name, use_gender, use_birthday, use_email]
+        title:        Edicion de Usuario
+        actions:
+          _list:        { label: Cancelar  }
+          _save:        { label: Guardar  }
+          _delete:      { label: Eliminar  }
+      new:    
+        display: 
+           Informacion Usuario:     [use_id, use_name, use_gender, use_birthday, use_email]
+        title:        Nuevo Usuario
+        actions:
+           _list:         { label: Cancelar  }
+           _save:         { label: Guardar  }
+           _save_and_add: { label: Guardar y crear  }

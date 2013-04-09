@@ -1,0 +1,54 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           groups
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              groups
+    plural:                groupss
+    route_prefix:          groups
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        created_at:   { label: Publicado, date_format: dd/MM/yyyy}
+        use_id:       { label: Usuario }
+        gro_id:       { label: Grupo }
+        gro_name:       { label: Nombre }
+        gro_version:       { label: Version }
+        gro_administrator:       { label: Administrador }
+      list:
+        title:        Lista de Grupos
+        display:     [use_id,gro_id, gro_name, gro_version, gro_administrator]
+        batch_actions:
+          #aprobar:  ~
+          #rechazar: ~
+          _delete:   { label: Eliminar  }
+        max_per_page:   100
+        object_actions:
+          _edit:     { label: Editar  }
+          _delete:   { label: Eliminar  }
+        actions: 
+          _new: { label: "Nuevo Grupo" }
+      filter:  
+        display:      [use_id,gro_id, gro_name, gro_version, gro_administrator]
+      form:    ~
+      edit:
+        display:  
+           Informacion Grupo:     [use_id,gro_id, gro_name, gro_version, gro_administrator]
+        title:        Edicion de Grupo
+        actions:
+          _list:        { label: Cancelar  }
+          _save:        { label: Guardar  }
+          _delete:      { label: Eliminar  }
+      new:    
+        display: 
+           Informacion Grupo:     [use_id,gro_id, gro_name, gro_version, gro_administrator]
+        title:        Nuevo Grupo
+        actions:
+           _list:         { label: Cancelar  }
+           _save:         { label: Guardar  }
+           _save_and_add: { label: Guardar y crear  }

@@ -1,0 +1,80 @@
+/* Estilos independientes para la ventana de búsquedas/filtros */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #999999;	
+}
+
+.sf_admin_filter {
+	width: 360px;
+	padding: 0 10px;	
+}
+
+
+h4 {
+	font-size: 	12px;
+	color: #ffffff;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-transform:uppercase;
+	background-color: #2d2d2d;
+	line-height: 30px;
+	padding: 0 10px;
+	display: block;
+}
+
+/* Form */
+select {
+	width: 142px;
+}
+.sf_admin_date select { 
+	width: auto;
+}
+
+input[type=text], textarea, input[type=password], select { color: #474747;  }
+input[type=text], input[type=password] {
+	font-size: 12px;
+	border: solid 1px #c6c6c6;
+	background-image: url(../img/inputSombra.png);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+	width: 120px;
+	padding: 3px 10px;
+	margin-bottom: 10px;
+}
+input[type=text]:focus, input[type=password]:focus { border-color: #a0a0a0; background-image: none; }
+
+input[type="submit"], input[type="button"] {
+	background-color:transparent;
+	background-image: url(../img/boton.png);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+	width: 102px;
+	height: 39px;
+	font-size: 12px;
+	color: #fff;
+	border: 0; 	
+	cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover  {
+	 background-position: 0px -40px;
+	 color: #ffffff;
+}
+input[type="submit"]:active, input[type="button"]:active {
+	 background-position: 0px -80px;
+}
+
+label {
+	font-size:	12px;
+	color: #999999;	
+	margin-bottom: 5px;
+	display: block;
+}
+
+/* Tabla */
+
+table td {
+	padding-bottom: 5px;	
+}

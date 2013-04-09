@@ -1,0 +1,334 @@
+/*--------------------------------- 
+	Nombre:  Admin vitrinas de navidad
+	Fecha: Septiember 2011
+	Desarrollo: MZZO <www.mzzo.com>
+	Autor: Allan Koryzma <allan@mzzo.com>
+-----------------------------------*/
+
+@charset "utf-8";
+
+a {color: #8db45f; text-decoration: none}
+a:link, a:visited 	{color: #8db45f; text-decoration: none}
+a:hover {color: #ec1e1e}
+a:active { color: #c21515}
+
+
+body {
+	background-color: #FFFFFF;
+	color: #4F4F4F;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url(../img/bg.png); /* borde eterno */
+	background-repeat: repeat-y;
+	background-position: center top;
+}
+
+/*Layout ---*/
+#contenedor {
+	width: 960px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#main {
+	float: right;
+	width: 730px;
+	padding: 30px 21px;
+	/*border-left: solid 1px #ebebeb;
+	border-right: solid 1px #ebebeb;*/
+}
+
+#aside {
+	width: 168px;
+	padding-top: 30px;
+	padding-right: 20px;
+}
+
+/*Top Bar------  */
+#topBar {
+	background-color: #2d2d2d;
+	color: #c5c5c5;
+	font-size: 11px;
+	height: 30px;
+	padding: 0 20px;
+}
+
+#topBar ul {
+	float: right;
+	margin-top: 7px;
+}
+
+#topBar ul li {
+	float: left;
+	line-height: 16px;
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: solid 1px #c5c5c5;
+}
+
+#topBar ul li:first-child { border-left: none; }
+
+#topBar a { color: #ffffff; }
+#topBar a:hover { color: #ec1e1e; }
+
+/*Header------ */
+#headerWrap {
+	height: 70px;
+	border-bottom: solid 1px #ebebeb;
+	background-color: #FFF;
+}
+
+#header {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#header h1 {
+	font-size: 24px;
+	color: #333333;
+	line-height: 70px;
+	font-weight: bold;
+}
+
+/*Navigation ---*/
+#aside h3 {
+	background-color: #7b965b;
+	color: #ffffff;
+	font-size: 11px;
+	width: 163px;
+	padding-left: 5px;
+	display: block;
+	text-transform: uppercase;
+	height: 26px;
+	line-height: 26px;
+	float: left;
+}
+
+.nav {
+	width: 168px;
+	float: left;
+	margin-bottom: 40px;	
+}
+
+.nav li {
+	font-size: 12px;
+	width: 168px;
+	float: left;
+	border-bottom: solid 1px #ebebeb;
+}
+
+.nav li a {
+	color: #474747;
+	line-height: 40px;
+	display: block;	
+}
+ 
+.nav li a:hover {
+	color: #ec1e1e;
+	background-image: url(../img/flecha.png);
+	background-repeat: no-repeat;
+	background-position: right 0px;
+}
+
+.nav li a:active {
+	background-position: right -41px;
+}
+
+.nav li.current a {
+	background-image: url(../img/flecha.png);
+	background-repeat: no-repeat;
+	background-position: right -82px;
+	color: #bfbfbf;	
+}
+
+/* General ---*/
+
+h2 {
+	font-size: 	32px;
+	color: #999999;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+h4 {
+	font-size: 	16px;
+	color: #ffffff;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-transform:uppercase;
+	background-color: #2d2d2d;
+	line-height: 30px;
+	padding: 0 10px;
+	display: block;
+}
+
+p {
+	font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+p a {
+	text-decoration: underline;	
+}
+
+/* Login */
+body#s_login {
+	background-image: none; /* Elimina lineas */	
+}
+
+#loginWrap {
+	width: 340px;
+	margin: 50px auto 0;	
+}
+
+#loginWrap input[type="submit"] {
+	margin: 10px 0 20px;;
+	float: right;
+}
+
+/* Form */
+input[type=text], textarea, input[type=password] { color: #474747;  }
+input[type=text], input[type=password] {
+	border: solid 1px #c6c6c6;
+	background-image: url(../img/inputSombra.png);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+	width: 318px;
+	padding: 4px 4px;
+	margin-bottom: 10px;
+}
+input[type=text]:focus, input[type=password]:focus { border-color: #a0a0a0; background-image: none; }
+
+label {
+	font-size:	16px;
+	color: #333333;	
+	margin-bottom: 5px;
+	display: block;
+}
+
+input[type="submit"], input[type="button"] {
+	background-color:transparent;
+	background-image: url(../img/boton.png);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+	width: 102px;
+	height: 39px;
+	font-size: 12px;
+	color: #fff;
+	border: 0; 	
+	cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+	 background-position: 0px -40px;
+	 color: #ffffff;
+}
+input[type="submit"]:active, input[type="button"]:active {
+	 background-position: 0px -80px;
+}
+
+/* Mensajes ---*/
+.mensaje {
+	font-size: 11px;
+	color: #333333;
+	background-color: #e1e8f0;
+	border: 1px solid #7f9cbd;
+	display: block;
+	padding: 3px 10px;
+	line-height: 19px;
+	margin-bottom: 10px;
+	clear: both;
+}
+.mensaje span {
+	background-image: url(../img/iconos.png);
+	background-position: 0px -56px;
+	display: block;
+	height: 19px;
+	width: 19px;
+	float: left;
+	margin-right: 10px;
+}
+.mensaje.alert { background-color: #f0e1e3; border-color: #bd7f7f; }
+.mensaje.alert span { background-position: -20px -56px;}
+
+.mensaje.correcto { background-color: #e6f0e1;	border-color: #8dbd7f; }
+.mensaje.correcto span { background-position: -40px -56px;}
+
+/*Botones------ */
+a.btn_editar, a.btn_aprobar, a.btn_eliminar {
+	background-image: url(../img/iconos.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	text-indent: -9999px;
+	height: 16px;
+	width: 16px;
+	float: right;
+}
+a.btn_editar {margin-right: 5px; }
+a.btn_aprobar { background-position: 0px -17px;}
+a.btn_eliminar{ background-position: 0px -34px;}
+
+a.btn_editar:hover { background-position: -17px 0;}
+a.btn_aprobar:hover{ background-position: -17px -17px;}
+a.btn_eliminar:hover { background-position: -17px -34px;}
+
+a.btn_editar:active { background-position: -34px 0px;}
+a.btn_aprobar:active{ background-position: -34px -17px;}
+a.btn_eliminar:active { background-position: -34px -34px;}
+
+/* Estilos synphony */
+
+#sf_admin_container h1 {
+	font-size: 	32px;
+	color: #999999;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#sf_admin_container table {
+    border-collapse: collapse;
+    border-right: 1px solid #E5EFF8;
+    border-top: 1px solid #E5EFF8;
+    width: 100%;
+	font-size: 12px;
+}
+
+#sf_admin_container tr.even td {
+    background-color: #F7FBFF;
+}
+
+#sf_admin_container td {
+    border-bottom: 1px solid #E5EFF8;
+    border-left: 1px solid #E5EFF8;
+    color: #678197;
+    padding: 3px 6px;
+    text-align: center;
+	vertical-align: middle !important;
+}
+#sf_admin_container th {
+    border-bottom: 1px solid #E5EFF8;
+    border-left: 1px solid #E5EFF8;
+    color: #678197;
+    font-weight: normal;
+    padding: 3px;
+    text-align: left;
+}
+#sf_admin_container thead th {
+	background-color: #2d2d2d;
+    color: #c6c6c6;
+    text-align: center;
+	font-weight: bold;
+	padding: 5px;
+}
+#sf_admin_container thead th a { color: #ffffff;}
+#sf_admin_container thead th a:hover { color: #c6c6c6;}
+
+#sf_admin_container tfoot th {
+	padding: 5px 20px;
+}
+
+#sf_admin_container .sf_admin_td_actions { visibility:hidden; width: 70px;}
+#sf_admin_container tr:hover .sf_admin_td_actions { visibility:visible;}
+#sf_admin_container tr:hover td { background-color: #ffffee;}
+
+

@@ -1,0 +1,57 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           friends
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              friends
+    plural:                friendss
+    route_prefix:          friends
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        created_at:   { label: Publicado, date_format: dd/MM/yyyy}
+        use_id:       { label: Usuario }
+        fri_id:       { label: Amigo }
+        fri_name:       { label: Nombre }
+        fri_first_name:       { label: Nombres }
+        fri_last_name:       { label: Apellidos }
+        fri_gender:       { label: Genero }
+        fri_birthday:       { label: Cumpleanos}
+        fri_email:       { label: email }
+      list:
+        title:        Lista de Amigos
+        display:     [use_id,fri_id, fri_name, fri_gender, fri_birthday, fri_email, created_at]
+        batch_actions:
+          #aprobar:  ~
+          #rechazar: ~
+          _delete:   { label: Eliminar  }
+        max_per_page:   100
+        object_actions:
+          _edit:     { label: Editar  }
+          _delete:   { label: Eliminar  }
+        actions: 
+          _new: { label: "Nuevo Amigo" }
+      filter:  
+        display:      [use_id,fri_id, fri_name, fri_first_name, fri_last_name, fri_birthday, fri_email]
+      form:    ~
+      edit:
+        display:  
+           Informacion Amigo:     [use_id, fri_id, fri_name, fri_gender, fri_birthday, fri_email]
+        title:        Edicion de Amigo
+        actions:
+          _list:        { label: Cancelar  }
+          _save:        { label: Guardar  }
+          _delete:      { label: Eliminar  }
+      new:    
+        display: 
+           Informacion Amigo:     [use_id, fri_id, fri_name, fri_gender, fri_birthday, fri_email]
+        title:        Nuevo Amigo
+        actions:
+           _list:         { label: Cancelar  }
+           _save:         { label: Guardar  }
+           _save_and_add: { label: Guardar y crear  }

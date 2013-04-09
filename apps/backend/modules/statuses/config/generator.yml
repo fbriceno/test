@@ -1,0 +1,54 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           statuses
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              statuses
+    plural:                statusess
+    route_prefix:          statuses
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        created_at:   { label: Publicado, date_format: dd/MM/yyyy}
+        use_id:       { label: Usuario }
+        sta_id:       { label: Status }
+        sta_message:       { label: Mensage }
+        sta_like_count:       { label: Me gusta }
+        sta_comments_count:       { label: Comentarios }
+      list:
+        title:        Lista de Status
+        display:     [use_id,sta_id, sta_message, sta_like_count, sta_comments_count,created_at]
+        batch_actions:
+          #aprobar:  ~
+          #rechazar: ~
+          _delete:   { label: Eliminar  }
+        max_per_page:   100
+        object_actions:
+          _edit:     { label: Editar  }
+          _delete:   { label: Eliminar  }
+        actions: 
+          _new: { label: "Nuevo Me Gusta" }
+      filter:  
+        display:      [use_id,sta_id, sta_message, sta_like_count, sta_comments_count,created_at]
+      form:    ~
+      edit:
+        display:  
+           Informacion Status:     [use_id,sta_id, sta_message, sta_like_count, sta_comments_count,created_at]
+        title:        Edicion Status
+        actions:
+          _list:        { label: Cancelar  }
+          _save:        { label: Guardar  }
+          _delete:      { label: Eliminar  }
+      new:    
+        display: 
+           Informacion Status:     [use_id,sta_id, sta_message, sta_like_count, sta_comments_count,created_at]
+        title:        Nuevo Status
+        actions:
+           _list:         { label: Cancelar  }
+           _save:         { label: Guardar  }
+           _save_and_add: { label: Guardar y crear  }

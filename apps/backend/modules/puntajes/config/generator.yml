@@ -1,0 +1,51 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           puntajes
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              puntajes
+    plural:                puntajess
+    route_prefix:          puntajes
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        pun_id:       { label: Id }
+        pun_nombre:       { label: Nombre }
+        pun_valor:       { label: Valor }
+      list:
+        title:        Lista de Puntajes
+        display:     [pun_id, pun_nombre, pun_valor]
+        batch_actions:
+          #aprobar:  ~
+          #rechazar: ~
+          _delete:   { label: Eliminar  }
+        max_per_page:   100
+        object_actions:
+          _edit:     { label: Editar  }
+          _delete:   { label: Eliminar  }
+        actions: 
+          _new: { label: "Nuevo Puntaje" }
+      filter:  
+        display:      [pun_id, pun_nombre, pun_valor]
+      form:    ~
+      edit:
+        display:  
+           Informacion Puntaje:     [pun_id, pun_nombre, pun_valor]
+        title:        Edicion de Puntaje
+        actions:
+          _list:        { label: Cancelar  }
+          _save:        { label: Guardar  }
+          _delete:      { label: Eliminar  }
+      new:    
+        display: 
+           Informacion Puntaje:     [pun_id, pun_nombre, pun_valor]
+        title:        Nuevo Puntaje
+        actions:
+           _list:         { label: Cancelar  }
+           _save:         { label: Guardar  }
+           _save_and_add: { label: Guardar y crear  }

@@ -1,0 +1,56 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           checkins
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              checkins
+    plural:                checkinss
+    route_prefix:          checkins
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        created_at:   { label: Publicado, date_format: dd/MM/yyyy}
+        use_id:       { label: Usuario }
+        che_name:       { label: Nombre }
+        che_place:       { label: Lugar }
+        che_message:       { label: Mensaje }
+        che_latitude:       { label: Latitud }
+        che_longitude:       { label: Longitud }
+        che_application:       { label: Aplicacion }
+      list:
+        title:        Lista de Lugares
+        display:     [use_id, che_name, che_place, che_latitude, che_longitude, created_at]
+        batch_actions:
+          #aprobar:  ~
+          #rechazar: ~
+          _delete:   { label: Eliminar  }
+        max_per_page:   100
+        object_actions:
+          _edit:     { label: Editar  }
+          _delete:   { label: Eliminar  }
+        actions: 
+          _new: { label: "Nuevo Lugar" }
+      filter:  
+        display:      [use_id, che_name, che_place, che_latitude, che_longitude]
+      form:    ~
+      edit:
+        display:  
+           Informacion Lugar:     [use_id, che_name, che_place, che_message, che_latitude, che_longitude]
+        title:        Edicion de Lugar
+        actions:
+          _list:        { label: Cancelar  }
+          _save:        { label: Guardar  }
+          _delete:      { label: Eliminar  }
+      new:    
+        display: 
+           Informacion Lugar:     [use_id, che_name, che_place, che_message, che_latitude, che_longitude]
+        title:        Nuevo Lugar
+        actions:
+           _list:         { label: Cancelar  }
+           _save:         { label: Guardar  }
+           _save_and_add: { label: Guardar y crear  }

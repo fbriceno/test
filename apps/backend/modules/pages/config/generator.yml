@@ -1,0 +1,58 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           pages
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              pages
+    plural:                pagess
+    route_prefix:          pages
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        created_at:   { label: Publicado, date_format: dd/MM/yyyy}
+        use_id:       { label: Usuario }
+        pag_id:       { label: Pagina }
+        pag_name:       { label: Nombre }
+        pag_picture:       { label: Foto }
+        pag_link:       { label: Link }
+        pag_category:       { label: Categoria }
+        pag_website:       { label: WebSite}
+        pag_likes:       { label: Me Gusta }
+        pag_checkins:       { label: Checkin }
+      list:
+        title:        Lista de Paginas
+        display:     [use_id,pag_id, pag_name, pag_picture, pag_category, pag_website, pag_likes, pag_checkins, created_at]
+        batch_actions:
+          #aprobar:  ~
+          #rechazar: ~
+          _delete:   { label: Eliminar  }
+        max_per_page:   100
+        object_actions:
+          _edit:     { label: Editar  }
+          _delete:   { label: Eliminar  }
+        actions: 
+          _new: { label: "Nuevo Pagina" }
+      filter:  
+        display:      [use_id,pag_id, pag_name, pag_picture, pag_category, pag_website, pag_likes, pag_checkins, created_at]
+      form:    ~
+      edit:
+        display:  
+           Informacion Pagina:     [use_id,pag_id, pag_name, pag_picture, pag_category, pag_website, pag_likes, pag_checkins, created_at]
+        title:        Edicion de Amigo
+        actions:
+          _list:        { label: Cancelar  }
+          _save:        { label: Guardar  }
+          _delete:      { label: Eliminar  }
+      new:    
+        display: 
+           Informacion Pagina:     [use_id,pag_id, pag_name, pag_picture, pag_category, pag_website, pag_likes, pag_checkins, created_at]
+        title:        Nuevo Pagina
+        actions:
+           _list:         { label: Cancelar  }
+           _save:         { label: Guardar  }
+           _save_and_add: { label: Guardar y crear  }
