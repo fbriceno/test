@@ -3,4 +3,13 @@ log/*
 web/uploads/*
 config/databases.yml
 config/propel.ini
-web/*Plugin/*
+data/sql/*
+lib/filter/base/Base*
+lib/filter/*Plugin/base/Base*
+lib/form/base/Base*
+lib/form/*Plugin/base/Base*
+lib/model/base/Base*
+lib/model/*Plugin/base/Base*
+lib/model/om/*
+lib/model/map/*
+web/*Plugin/*/*
