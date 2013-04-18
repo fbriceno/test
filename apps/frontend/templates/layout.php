@@ -15,7 +15,7 @@
  * under the License.
  */
 
-require '/home/ubuntu/test:/home/ubuntu/test/src/facebook.php';
+require '/home/ubuntu/test/src/facebook.php';
 
 // Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(
