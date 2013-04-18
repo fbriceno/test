@@ -46,7 +46,11 @@ if ($user) {
 if ($user) {
   $logoutUrl = $facebook->getLogoutUrl();
 } else {
-  $loginUrl = $facebook->getLoginUrl();
+  //$loginUrl = $facebook->getLoginUrl();
+ $params = array(
+    "redirect_uri" => REDIRECT_URI,
+    "scope" => "email,read_stream,publish_stream,user_photos,user_videos");
+    echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
 }
 
 // This call will always work since we are fetching public data.
