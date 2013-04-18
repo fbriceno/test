@@ -102,6 +102,7 @@ $naitik = $facebook->api('/naitik');
 	print_r($myFriends);
     foreach ($myFriends['data'] as $friend)
     {
+	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">'
       echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
     }
     echo "</ul><br/><br/>";
@@ -112,5 +113,47 @@ $naitik = $facebook->api('/naitik');
     <h3>Public profile of Naitik</h3>
     <img src="https://graph.facebook.com/naitik/picture">
     <?php echo $naitik['name']; ?>
+	
+	<div id="fb-root"></div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <p>
+      <input type="button"
+        onclick="sendRequestToRecipients(); return false;"
+        value="Send Request to Users Directly"
+      />
+      <input type="text" value="User ID" name="user_ids" />
+      </p>
+    <p>
+    <input type="button"
+      onclick="sendRequestViaMultiFriendSelector(); return false;"
+      value="Send Request to Many Users with MFS"
+    />
+    </p>
+    
+    <script>
+      FB.init({
+        appId  : 'YOUR_APP_ID',
+        frictionlessRequests: true
+      });
+
+      function sendRequestToRecipients() {
+        var user_ids = document.getElementsByName("user_ids")[0].value;
+        FB.ui({method: 'apprequests',
+          message: 'My Great Request',
+          to: user_ids
+        }, requestCallback);
+      }
+
+      function sendRequestViaMultiFriendSelector() {
+        FB.ui({method: 'apprequests',
+          message: 'My Great Request'
+        }, requestCallback);
+      }
+      
+      function requestCallback(response) {
+        // Handle callback here
+      }
+    </script>
+  </body>
   </body>
 </html>
