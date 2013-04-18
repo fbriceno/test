@@ -99,6 +99,7 @@ $naitik = $facebook->api('/naitik');
       <pre><?php print_r($user_profile); ?></pre>
     <?php echo '<p>Y estas las de mis amigos...</p>';
     echo "<ul id='lista-de-amigos'>";
+	print_r($myFriends);
     foreach ($myFriends['data'] as $friend)
     {
       echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
