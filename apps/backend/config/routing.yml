@@ -1,3 +1,12 @@
+concurso:
+  class: sfPropelRouteCollection
+  options:
+    model:                concurso
+    module:               concurso
+    prefix_path:          /concurso
+    column:               con_id
+    with_wildcard_routes: true
+
 users:
   class: sfPropelRouteCollection
   options:

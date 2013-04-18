@@ -15,8 +15,10 @@ abstract class BasePagesForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'pag_id2'      => new sfWidgetFormInputHidden(),
+      'use_id2'      => new sfWidgetFormPropelChoice(array('model' => 'Users', 'add_empty' => false)),
       'use_id'       => new sfWidgetFormInputText(),
       'pag_id'       => new sfWidgetFormInputText(),
+      'con_id'       => new sfWidgetFormPropelChoice(array('model' => 'Concurso', 'add_empty' => false)),
       'pag_name'     => new sfWidgetFormInputText(),
       'pag_picture'  => new sfWidgetFormInputText(),
       'pag_link'     => new sfWidgetFormInputText(),
@@ -32,8 +34,10 @@ abstract class BasePagesForm extends BaseFormPropel
 
     $this->setValidators(array(
       'pag_id2'      => new sfValidatorChoice(array('choices' => array($this->getObject()->getPagId2()), 'empty_value' => $this->getObject()->getPagId2(), 'required' => false)),
+      'use_id2'      => new sfValidatorPropelChoice(array('model' => 'Users', 'column' => 'use_id2')),
       'use_id'       => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'pag_id'       => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'con_id'       => new sfValidatorPropelChoice(array('model' => 'Concurso', 'column' => 'con_id')),
       'pag_name'     => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'pag_picture'  => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'pag_link'     => new sfValidatorString(array('max_length' => 50, 'required' => false)),

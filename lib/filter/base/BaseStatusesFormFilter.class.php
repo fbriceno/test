@@ -12,8 +12,9 @@ abstract class BaseStatusesFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'use_id2'            => new sfWidgetFormFilterInput(),
+      'use_id2'            => new sfWidgetFormPropelChoice(array('model' => 'Users', 'add_empty' => true)),
       'sta_id'             => new sfWidgetFormFilterInput(),
+      'con_id'             => new sfWidgetFormPropelChoice(array('model' => 'Concurso', 'add_empty' => true)),
       'sta_message'        => new sfWidgetFormFilterInput(),
       'sta_updated_time'   => new sfWidgetFormFilterInput(),
       'sta_like_count'     => new sfWidgetFormFilterInput(),
@@ -23,8 +24,9 @@ abstract class BaseStatusesFormFilter extends BaseFormFilterPropel
     ));
 
     $this->setValidators(array(
-      'use_id2'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'use_id2'            => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Users', 'column' => 'use_id2')),
       'sta_id'             => new sfValidatorPass(array('required' => false)),
+      'con_id'             => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Concurso', 'column' => 'con_id')),
       'sta_message'        => new sfValidatorPass(array('required' => false)),
       'sta_updated_time'   => new sfValidatorPass(array('required' => false)),
       'sta_like_count'     => new sfValidatorPass(array('required' => false)),
@@ -49,8 +51,9 @@ abstract class BaseStatusesFormFilter extends BaseFormFilterPropel
   {
     return array(
       'sta_id2'            => 'Number',
-      'use_id2'            => 'Number',
+      'use_id2'            => 'ForeignKey',
       'sta_id'             => 'Text',
+      'con_id'             => 'ForeignKey',
       'sta_message'        => 'Text',
       'sta_updated_time'   => 'Text',
       'sta_like_count'     => 'Text',

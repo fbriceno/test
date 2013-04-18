@@ -16,6 +16,7 @@ abstract class BaseUsersForm extends BaseFormPropel
     $this->setWidgets(array(
       'use_id2'         => new sfWidgetFormInputHidden(),
       'use_id'          => new sfWidgetFormInputText(),
+      'con_id'          => new sfWidgetFormPropelChoice(array('model' => 'Concurso', 'add_empty' => false)),
       'use_name'        => new sfWidgetFormInputText(),
       'use_first_name'  => new sfWidgetFormInputText(),
       'use_middle_name' => new sfWidgetFormInputText(),
@@ -34,6 +35,7 @@ abstract class BaseUsersForm extends BaseFormPropel
     $this->setValidators(array(
       'use_id2'         => new sfValidatorChoice(array('choices' => array($this->getObject()->getUseId2()), 'empty_value' => $this->getObject()->getUseId2(), 'required' => false)),
       'use_id'          => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'con_id'          => new sfValidatorPropelChoice(array('model' => 'Concurso', 'column' => 'con_id')),
       'use_name'        => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'use_first_name'  => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'use_middle_name' => new sfValidatorString(array('max_length' => 50, 'required' => false)),

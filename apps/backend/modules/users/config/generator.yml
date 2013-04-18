@@ -33,6 +33,10 @@ generator:
         object_actions:
           _edit:     { label: Editar  }
           _delete:   { label: Eliminar  }
+          viewCheckins {label: Checkins}
+          viewFriends {label: Amigos}
+          viewGroups {label: Grupos}
+          viewLikes {label: Me Gustan}
         actions: 
           _new: { label: "Nuevo Usuario" }
       filter:  

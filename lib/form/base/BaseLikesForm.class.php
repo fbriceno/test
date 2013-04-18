@@ -15,9 +15,11 @@ abstract class BaseLikesForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'lik_id2'          => new sfWidgetFormInputHidden(),
+      'use_id2'          => new sfWidgetFormPropelChoice(array('model' => 'Users', 'add_empty' => false)),
       'pag_id'           => new sfWidgetFormInputText(),
       'use_id'           => new sfWidgetFormInputText(),
       'lik_id'           => new sfWidgetFormInputText(),
+      'con_id'           => new sfWidgetFormPropelChoice(array('model' => 'Concurso', 'add_empty' => false)),
       'lik_name'         => new sfWidgetFormInputText(),
       'lik_category'     => new sfWidgetFormInputText(),
       'lik_created_time' => new sfWidgetFormInputText(),
@@ -27,9 +29,11 @@ abstract class BaseLikesForm extends BaseFormPropel
 
     $this->setValidators(array(
       'lik_id2'          => new sfValidatorChoice(array('choices' => array($this->getObject()->getLikId2()), 'empty_value' => $this->getObject()->getLikId2(), 'required' => false)),
+      'use_id2'          => new sfValidatorPropelChoice(array('model' => 'Users', 'column' => 'use_id2')),
       'pag_id'           => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'use_id'           => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'lik_id'           => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'con_id'           => new sfValidatorPropelChoice(array('model' => 'Concurso', 'column' => 'con_id')),
       'lik_name'         => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'lik_category'     => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'lik_created_time' => new sfValidatorString(array('max_length' => 50, 'required' => false)),

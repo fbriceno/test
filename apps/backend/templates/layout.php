@@ -101,7 +101,7 @@
 		<ul class="nav">
 			<li <?php if(strstr($sf_request->getUri(),'sf_guard_user')){?> class="current" <?php }?> ><?php //echo link_to('Usuarios', 'sf_guard_user') ?></li> 
 			<li><a href="<?php echo url_for('puntajes'); ?>" title="">Puntajes</a></li>
-			
+			<li><a href="<?php echo url_for('concurso'); ?>" title="">Concursos</a></li>
 		</ul>
 		
 		

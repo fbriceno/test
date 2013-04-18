@@ -12,6 +12,16 @@
         <parameter name="Extra" value="auto_increment"/>
       </vendor>
     </column>
+    <column name="use_id2" phpName="UseId2" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="use_id2"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
     <column name="use_id" phpName="UseId" type="VARCHAR" size="30" required="false">
       <vendor type="mysql">
         <parameter name="Field" value="use_id"/>
@@ -28,6 +38,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -112,8 +132,132 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_19" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="users" name="fk_reference_11" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="use_id2" foreign="use_id2"/>
+    </foreign-key>
+    <index name="fk_reference_11">
+      <index-column name="use_id2"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="checkins"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_11"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="use_id2"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
+    <index name="fk_reference_19">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="checkins"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_19"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="checkins"/>
+      <parameter name="Engine" value="InnoDB"/>
+      <parameter name="Version" value="10"/>
+      <parameter name="Row_format" value="Compact"/>
+      <parameter name="Rows" value="0"/>
+      <parameter name="Avg_row_length" value="0"/>
+      <parameter name="Data_length" value="16384"/>
+      <parameter name="Max_data_length" value="0"/>
+      <parameter name="Index_length" value="32768"/>
+      <parameter name="Data_free" value="28311552"/>
+      <parameter name="Auto_increment" value="1"/>
+      <parameter name="Create_time" value="2013-04-15 14:20:33"/>
+      <parameter name="Update_time" value=""/>
+      <parameter name="Check_time" value=""/>
+      <parameter name="Collation" value="latin1_swedish_ci"/>
+      <parameter name="Checksum" value=""/>
+      <parameter name="Create_options" value=""/>
+      <parameter name="Comment" value=""/>
+    </vendor>
+  </table>
+  <table name="concurso" phpName="Concurso">
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" primaryKey="true" autoIncrement="true" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="PRI"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value="auto_increment"/>
+      </vendor>
+    </column>
+    <column name="con_nombre" phpName="ConNombre" type="VARCHAR" size="60" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_nombre"/>
+        <parameter name="Type" value="varchar(60)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_link" phpName="ConLink" type="VARCHAR" size="50" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_link"/>
+        <parameter name="Type" value="varchar(50)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_cod" phpName="ConCod" type="VARCHAR" size="50" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_cod"/>
+        <parameter name="Type" value="varchar(50)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="false">
+      <vendor type="mysql">
+        <parameter name="Field" value="created_at"/>
+        <parameter name="Type" value="datetime"/>
+        <parameter name="Null" value="YES"/>
+        <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP" required="false">
+      <vendor type="mysql">
+        <parameter name="Field" value="updated_at"/>
+        <parameter name="Type" value="datetime"/>
+        <parameter name="Null" value="YES"/>
+        <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <vendor type="mysql">
+      <parameter name="Name" value="concurso"/>
       <parameter name="Engine" value="InnoDB"/>
       <parameter name="Version" value="10"/>
       <parameter name="Row_format" value="Compact"/>
@@ -124,7 +268,7 @@
       <parameter name="Index_length" value="0"/>
       <parameter name="Data_free" value="28311552"/>
       <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:53"/>
+      <parameter name="Create_time" value="2013-04-15 14:36:35"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -144,6 +288,16 @@
         <parameter name="Extra" value="auto_increment"/>
       </vendor>
     </column>
+    <column name="use_id2" phpName="UseId2" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="use_id2"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
     <column name="use_id" phpName="UseId" type="VARCHAR" size="30" required="false">
       <vendor type="mysql">
         <parameter name="Field" value="use_id"/>
@@ -160,6 +314,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -284,9 +448,9 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
-    <column name="created_at2" phpName="CreatedAt2" type="TIMESTAMP" required="false">
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="false">
       <vendor type="mysql">
-        <parameter name="Field" value="created_at2"/>
+        <parameter name="Field" value="created_at"/>
         <parameter name="Type" value="datetime"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
@@ -294,9 +458,9 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
-    <column name="updated_at2" phpName="UpdatedAt2" type="TIMESTAMP" required="false">
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP" required="false">
       <vendor type="mysql">
-        <parameter name="Field" value="updated_at2"/>
+        <parameter name="Field" value="updated_at"/>
         <parameter name="Type" value="datetime"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
@@ -304,6 +468,48 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_7" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="users" name="fk_reference_10" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="use_id2" foreign="use_id2"/>
+    </foreign-key>
+    <index name="fk_reference_10">
+      <index-column name="use_id2"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="friends"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_10"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="use_id2"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
+    <index name="fk_reference_7">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="friends"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_7"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="friends"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -313,10 +519,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="32768"/>
       <parameter name="Data_free" value="28311552"/>
       <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:19"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -336,6 +542,16 @@
         <parameter name="Extra" value="auto_increment"/>
       </vendor>
     </column>
+    <column name="use_id2" phpName="UseId2" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="use_id2"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
     <column name="use_id" phpName="UseId" type="VARCHAR" size="30" required="false">
       <vendor type="mysql">
         <parameter name="Field" value="use_id"/>
@@ -352,6 +568,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -386,6 +612,48 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_4" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="users" name="fk_reference_18" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="use_id2" foreign="use_id2"/>
+    </foreign-key>
+    <index name="fk_reference_18">
+      <index-column name="use_id2"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="groups"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_18"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="use_id2"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
+    <index name="fk_reference_4">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="groups"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_4"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="groups"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -395,10 +663,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="32768"/>
       <parameter name="Data_free" value="28311552"/>
       <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:19"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -418,6 +686,16 @@
         <parameter name="Extra" value="auto_increment"/>
       </vendor>
     </column>
+    <column name="use_id2" phpName="UseId2" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="use_id2"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
     <column name="use_id" phpName="UseId" type="VARCHAR" size="30" required="false">
       <vendor type="mysql">
         <parameter name="Field" value="use_id"/>
@@ -434,6 +712,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -488,6 +776,48 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_9" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="users" name="fk_reference_15" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="use_id2" foreign="use_id2"/>
+    </foreign-key>
+    <index name="fk_reference_15">
+      <index-column name="use_id2"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="interest"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_15"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="use_id2"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
+    <index name="fk_reference_9">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="interest"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_9"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="interest"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -497,10 +827,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="32768"/>
       <parameter name="Data_free" value="28311552"/>
       <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:19"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -518,6 +848,16 @@
         <parameter name="Key" value="PRI"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value="auto_increment"/>
+      </vendor>
+    </column>
+    <column name="use_id2" phpName="UseId2" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="use_id2"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
       </vendor>
     </column>
     <column name="pag_id" phpName="PagId" type="VARCHAR" size="30" required="false">
@@ -546,6 +886,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -600,6 +950,48 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_5" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="users" name="fk_reference_12" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="use_id2" foreign="use_id2"/>
+    </foreign-key>
+    <index name="fk_reference_12">
+      <index-column name="use_id2"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="likes"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_12"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="use_id2"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
+    <index name="fk_reference_5">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="likes"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_5"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="likes"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -609,10 +1001,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="32768"/>
       <parameter name="Data_free" value="28311552"/>
       <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:19"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -632,6 +1024,16 @@
         <parameter name="Extra" value="auto_increment"/>
       </vendor>
     </column>
+    <column name="use_id2" phpName="UseId2" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="use_id2"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
     <column name="use_id" phpName="UseId" type="VARCHAR" size="30" required="false">
       <vendor type="mysql">
         <parameter name="Field" value="use_id"/>
@@ -648,6 +1050,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -762,6 +1174,48 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="users" name="fk_reference_14" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="use_id2" foreign="use_id2"/>
+    </foreign-key>
+    <foreign-key foreignTable="concurso" name="fk_reference_1" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <index name="fk_reference_1">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="pages"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_1"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
+    <index name="fk_reference_14">
+      <index-column name="use_id2"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="pages"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_14"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="use_id2"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="pages"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -771,10 +1225,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="32768"/>
       <parameter name="Data_free" value="28311552"/>
       <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:20"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -784,12 +1238,22 @@
     </vendor>
   </table>
   <table name="puntajes" phpName="Puntajes">
-    <column name="pun_id" phpName="PunId" type="INTEGER" size="20" primaryKey="true" required="true">
+    <column name="pun_id" phpName="PunId" type="INTEGER" size="20" primaryKey="true" autoIncrement="true" required="true">
       <vendor type="mysql">
         <parameter name="Field" value="pun_id"/>
         <parameter name="Type" value="int(20)"/>
         <parameter name="Null" value="NO"/>
         <parameter name="Key" value="PRI"/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value="auto_increment"/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -814,6 +1278,47 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="false">
+      <vendor type="mysql">
+        <parameter name="Field" value="created_at"/>
+        <parameter name="Type" value="datetime"/>
+        <parameter name="Null" value="YES"/>
+        <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP" required="false">
+      <vendor type="mysql">
+        <parameter name="Field" value="updated_at"/>
+        <parameter name="Type" value="datetime"/>
+        <parameter name="Null" value="YES"/>
+        <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_3" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <index name="fk_reference_3">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="puntajes"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_3"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="puntajes"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -823,10 +1328,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="16384"/>
       <parameter name="Data_free" value="28311552"/>
-      <parameter name="Auto_increment" value=""/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Auto_increment" value="1"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:20"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -851,7 +1356,7 @@
         <parameter name="Field" value="use_id2"/>
         <parameter name="Type" value="int(20)"/>
         <parameter name="Null" value="YES"/>
-        <parameter name="Key" value=""/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -862,6 +1367,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -926,6 +1441,48 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_2" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="users" name="fk_reference_13" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="use_id2" foreign="use_id2"/>
+    </foreign-key>
+    <index name="fk_reference_13">
+      <index-column name="use_id2"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="statuses"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_13"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="use_id2"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value="YES"/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
+    <index name="fk_reference_2">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="statuses"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_2"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="statuses"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -935,10 +1492,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="32768"/>
       <parameter name="Data_free" value="28311552"/>
       <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:20"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>
@@ -964,6 +1521,16 @@
         <parameter name="Type" value="varchar(30)"/>
         <parameter name="Null" value="YES"/>
         <parameter name="Key" value=""/>
+        <parameter name="Default" value=""/>
+        <parameter name="Extra" value=""/>
+      </vendor>
+    </column>
+    <column name="con_id" phpName="ConId" type="INTEGER" size="20" required="true">
+      <vendor type="mysql">
+        <parameter name="Field" value="con_id"/>
+        <parameter name="Type" value="int(20)"/>
+        <parameter name="Null" value="NO"/>
+        <parameter name="Key" value="MUL"/>
         <parameter name="Default" value=""/>
         <parameter name="Extra" value=""/>
       </vendor>
@@ -1098,6 +1665,27 @@
         <parameter name="Extra" value=""/>
       </vendor>
     </column>
+    <foreign-key foreignTable="concurso" name="fk_reference_17" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="con_id" foreign="con_id"/>
+    </foreign-key>
+    <index name="fk_reference_17">
+      <index-column name="con_id"/>
+      <vendor type="mysql">
+        <parameter name="Table" value="users"/>
+        <parameter name="Non_unique" value="1"/>
+        <parameter name="Key_name" value="fk_reference_17"/>
+        <parameter name="Seq_in_index" value="1"/>
+        <parameter name="Column_name" value="con_id"/>
+        <parameter name="Collation" value="A"/>
+        <parameter name="Cardinality" value="0"/>
+        <parameter name="Sub_part" value=""/>
+        <parameter name="Packed" value=""/>
+        <parameter name="Null" value=""/>
+        <parameter name="Index_type" value="BTREE"/>
+        <parameter name="Comment" value=""/>
+        <parameter name="Index_comment" value=""/>
+      </vendor>
+    </index>
     <vendor type="mysql">
       <parameter name="Name" value="users"/>
       <parameter name="Engine" value="InnoDB"/>
@@ -1107,10 +1695,10 @@
       <parameter name="Avg_row_length" value="0"/>
       <parameter name="Data_length" value="16384"/>
       <parameter name="Max_data_length" value="0"/>
-      <parameter name="Index_length" value="0"/>
+      <parameter name="Index_length" value="16384"/>
       <parameter name="Data_free" value="28311552"/>
-      <parameter name="Auto_increment" value="1"/>
-      <parameter name="Create_time" value="2012-12-17 01:20:55"/>
+      <parameter name="Auto_increment" value="2"/>
+      <parameter name="Create_time" value="2013-04-15 14:39:20"/>
       <parameter name="Update_time" value=""/>
       <parameter name="Check_time" value=""/>
       <parameter name="Collation" value="latin1_swedish_ci"/>

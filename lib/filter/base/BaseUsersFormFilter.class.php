@@ -13,6 +13,7 @@ abstract class BaseUsersFormFilter extends BaseFormFilterPropel
   {
     $this->setWidgets(array(
       'use_id'          => new sfWidgetFormFilterInput(),
+      'con_id'          => new sfWidgetFormPropelChoice(array('model' => 'Concurso', 'add_empty' => true)),
       'use_name'        => new sfWidgetFormFilterInput(),
       'use_first_name'  => new sfWidgetFormFilterInput(),
       'use_middle_name' => new sfWidgetFormFilterInput(),
@@ -30,6 +31,7 @@ abstract class BaseUsersFormFilter extends BaseFormFilterPropel
 
     $this->setValidators(array(
       'use_id'          => new sfValidatorPass(array('required' => false)),
+      'con_id'          => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Concurso', 'column' => 'con_id')),
       'use_name'        => new sfValidatorPass(array('required' => false)),
       'use_first_name'  => new sfValidatorPass(array('required' => false)),
       'use_middle_name' => new sfValidatorPass(array('required' => false)),
@@ -62,6 +64,7 @@ abstract class BaseUsersFormFilter extends BaseFormFilterPropel
     return array(
       'use_id2'         => 'Number',
       'use_id'          => 'Text',
+      'con_id'          => 'ForeignKey',
       'use_name'        => 'Text',
       'use_first_name'  => 'Text',
       'use_middle_name' => 'Text',

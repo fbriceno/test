@@ -12,8 +12,10 @@ abstract class BasePagesFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
+      'use_id2'      => new sfWidgetFormPropelChoice(array('model' => 'Users', 'add_empty' => true)),
       'use_id'       => new sfWidgetFormFilterInput(),
       'pag_id'       => new sfWidgetFormFilterInput(),
+      'con_id'       => new sfWidgetFormPropelChoice(array('model' => 'Concurso', 'add_empty' => true)),
       'pag_name'     => new sfWidgetFormFilterInput(),
       'pag_picture'  => new sfWidgetFormFilterInput(),
       'pag_link'     => new sfWidgetFormFilterInput(),
@@ -28,8 +30,10 @@ abstract class BasePagesFormFilter extends BaseFormFilterPropel
     ));
 
     $this->setValidators(array(
+      'use_id2'      => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Users', 'column' => 'use_id2')),
       'use_id'       => new sfValidatorPass(array('required' => false)),
       'pag_id'       => new sfValidatorPass(array('required' => false)),
+      'con_id'       => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Concurso', 'column' => 'con_id')),
       'pag_name'     => new sfValidatorPass(array('required' => false)),
       'pag_picture'  => new sfValidatorPass(array('required' => false)),
       'pag_link'     => new sfValidatorPass(array('required' => false)),
@@ -59,8 +63,10 @@ abstract class BasePagesFormFilter extends BaseFormFilterPropel
   {
     return array(
       'pag_id2'      => 'Number',
+      'use_id2'      => 'ForeignKey',
       'use_id'       => 'Text',
       'pag_id'       => 'Text',
+      'con_id'       => 'ForeignKey',
       'pag_name'     => 'Text',
       'pag_picture'  => 'Text',
       'pag_link'     => 'Text',

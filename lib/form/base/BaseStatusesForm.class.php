@@ -15,8 +15,9 @@ abstract class BaseStatusesForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'sta_id2'            => new sfWidgetFormInputHidden(),
-      'use_id2'            => new sfWidgetFormInputText(),
+      'use_id2'            => new sfWidgetFormPropelChoice(array('model' => 'Users', 'add_empty' => true)),
       'sta_id'             => new sfWidgetFormInputText(),
+      'con_id'             => new sfWidgetFormPropelChoice(array('model' => 'Concurso', 'add_empty' => false)),
       'sta_message'        => new sfWidgetFormInputText(),
       'sta_updated_time'   => new sfWidgetFormInputText(),
       'sta_like_count'     => new sfWidgetFormInputText(),
@@ -27,8 +28,9 @@ abstract class BaseStatusesForm extends BaseFormPropel
 
     $this->setValidators(array(
       'sta_id2'            => new sfValidatorChoice(array('choices' => array($this->getObject()->getStaId2()), 'empty_value' => $this->getObject()->getStaId2(), 'required' => false)),
-      'use_id2'            => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647, 'required' => false)),
+      'use_id2'            => new sfValidatorPropelChoice(array('model' => 'Users', 'column' => 'use_id2', 'required' => false)),
       'sta_id'             => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'con_id'             => new sfValidatorPropelChoice(array('model' => 'Concurso', 'column' => 'con_id')),
       'sta_message'        => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'sta_updated_time'   => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'sta_like_count'     => new sfValidatorString(array('max_length' => 50, 'required' => false)),
