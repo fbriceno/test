@@ -7,9 +7,9 @@ require_once "../src/facebook.php";
 
 $config = array(
 
-    "appId" => 163207260491691,
+    "appId" => "163207260491691",
 
-    "secret" => 0d45ef52a848c029298c462209ee212c);
+    "secret" => "0d45ef52a848c029298c462209ee212c");
 
  
 
