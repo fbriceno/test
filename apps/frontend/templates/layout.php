@@ -36,6 +36,8 @@ if ($user) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
+    $myFriends = $facebook->api('/me/friends');
+    
   } catch (FacebookApiException $e) {
     error_log($e);
     $user = null;
@@ -46,7 +48,11 @@ if ($user) {
 if ($user) {
   $logoutUrl = $facebook->getLogoutUrl();
 } else {
-  $loginUrl = $facebook->getLoginUrl();
+  //$loginUrl = $facebook->getLoginUrl();
+ $params = array(
+    "redirect_uri" => REDIRECT_URI,
+    "scope" => "email,read_stream,publish_stream,user_photos,user_videos");
+    echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
 }
 
 // This call will always work since we are fetching public data.
@@ -91,7 +97,14 @@ $naitik = $facebook->api('/naitik');
 
       <h3>Your User Object (/me)</h3>
       <pre><?php print_r($user_profile); ?></pre>
-    <?php else: ?>
+    <?php echo '<p>Y estas las de mis amigos...</p>';
+    echo "<ul id='lista-de-amigos'>";
+    foreach ($myFriends['data'] as $friend)
+    {
+      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
+    }
+    echo "</ul><br/><br/>";
+    else: ?>
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
