@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "../src/facebook.php";
+require_once "/home/ubuntu/test/web/src/facebook.php";
 
 
 $config = array(
