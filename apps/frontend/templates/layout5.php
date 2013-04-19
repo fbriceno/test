@@ -37,12 +37,19 @@
 
       function sendRequestViaMultiFriendSelector() {
         FB.ui({method: 'apprequests',
-          message: 'My Great Request'
+          message: 'My Great Request',
+          filters:['app_non_users']
         }, requestCallback);
       }
       
       function requestCallback(response) {
         // Handle callback here
+        if (response && response.request_ids) {
+        // response.request_ids is what you need
+           alert(response.request_ids)
+        } else {
+           alert('canceled');
+        }
       }
     </script>
   </body>
