@@ -15,7 +15,7 @@ class usersActions extends sfActions
 	// global $log;
 //$logPath = sfConfig::get('sf_log_dir').'/llamar.log';
 //$log = new sfFileLogger(new sfEventDispatcher(), array('level' => sfFileLogger::DEBUG,'file' => $logPath,'type' => 'llamar'));
-  ini_set('display_errors',0);
+  ini_set('display_errors',1);
   require_once("/home/ubuntu/test/web/src/facebook.php");
   //Config FB
   $config = array();
@@ -29,7 +29,7 @@ class usersActions extends sfActions
   $facebook = new Facebook($config); 
   $params = array(
       'scope' => 'email,publish_stream',
-      'redirect_uri' => 'http://sprite.mccann.cl.mzzo.mobi/llamar',
+      //'redirect_uri' => 'http://sprite.mccann.cl.mzzo.mobi/llamar',
       'display' => 'touch'
    );
   $usuarioLogueado = false;
@@ -83,9 +83,9 @@ class usersActions extends sfActions
 	  $user->setWebsite($_COOKIE['username']);
       $status=$user->save();
 	  //echo "nuevo";
-	  $log->debug('id:'.$u['id'].' | name:'.$u['name'].' | first_name:'.$u['first_name'].' | middle_name:'.$u['middle_name'].' | last_name:'.$u['last_name'].' | gender:'.$u['gender'].' | locale:'.$u['locale'].' | link:'.$u['link'].' | birthday:'.$u['birthday'].' | email:'.$u['email'].' | location:'.$u['location'].' | website:'.$u['website']);
+	  //$log->debug('id:'.$u['id'].' | name:'.$u['name'].' | first_name:'.$u['first_name'].' | middle_name:'.$u['middle_name'].' | last_name:'.$u['last_name'].' | gender:'.$u['gender'].' | locale:'.$u['locale'].' | link:'.$u['link'].' | birthday:'.$u['birthday'].' | email:'.$u['email'].' | location:'.$u['location'].' | website:'.$u['website']);
 	  } catch (Exception $e) {
-       $log->debug('error:'.$e);
+       //$log->debug('error:'.$e);
 	   //echo $e;
       }
       }elseif($countcb>=2){ 
@@ -93,7 +93,7 @@ class usersActions extends sfActions
 		//foreach ($callbacks as $i => $callback){
 		// echo $callback->getUuid()." ".$callback->getDuration()." ".$callback->getHangupCause()." ".$callback->getLeg()." ".$callback->getDate()."</br>";
 		//}
-		$this->redirect('llamar/alert');
+		//$this->redirect('llamar/alert');
 		 
 		}
 	  else{
@@ -108,7 +108,7 @@ class usersActions extends sfActions
       throw new Exception('Post unsuccessful!');
      }
      } catch (Exception $e) {
-      $log->debug('error post:'.$e);
+      //$log->debug('error post:'.$e);
      }
       
      }}
