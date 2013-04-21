@@ -20,7 +20,30 @@
       value="Send Request to Many Users with MFS"
     />
     </p>
-    
+    <?php
+	$signed_request = $facebook->getSignedRequest();
+$page_id = $signed_request["page"]
+["id"];
+$page_admin = $signed_request["page"]
+["admin"];
+$like_status = $signed_request["page"]
+["liked"];
+$country = $signed_request["user"]
+["country"];
+$locale = $signed_request["user"]
+["locale"];
+
+if ($like_status) {
+      echo("nofan.php");
+
+}
+
+else {
+      echo("fan.php");
+
+}
+	
+	?>
     <script>
       FB.init({
         appId  : '163207260491691',
