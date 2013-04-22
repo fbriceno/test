@@ -45,7 +45,7 @@
 <?php  echo $sf_content ?>
 
 </div><!--/contenedor-->
-    <?php if ($user): ?>
+    <?php if ($userf): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
       <div>
@@ -57,9 +57,9 @@
     <h3>PHP Session</h3>
     <pre><?php print_r($_SESSION); ?></pre>
 
-    <?php if ($user): ?>
+    <?php if ($userf): ?>
       <h3>You</h3>
-      <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
+      <img src="https://graph.facebook.com/<?php echo $userf; ?>/picture">
 
       <h3>Your User Object (/me)</h3>
       <pre><?php print_r($user_profile); ?></pre>
