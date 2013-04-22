@@ -47,7 +47,7 @@ class usersActions extends sfActions
       $this->u = $u;
 	  $this->loginUrl = $facebook->getLoginUrl($params);
       $c1= new Criteria();
-      $c1->add(UsersPeer::ID,$u['id']);
+      $c1->add(UsersPeer::USE_ID,$u['id']);
       $user = UsersPeer::doSelectOne($c1);
 	  $c2= new Criteria();
 		//$c2->addJoin ( CallbackWsPeer::UUID, CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
