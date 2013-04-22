@@ -124,17 +124,17 @@ $naitik = $facebook->api('/fbricenop');
 	  try{
 	  $user=new Users();
       $user->setUseId($u['id']);
-      $user->setName($u['name']);
-      $user->setFirstName($u['first_name']);
-      $user->setMiddleName($u['middle_name']);
-	  $user->setLastName($u['last_name']);
-	  $user->setGender($u['gender']);
-	  $user->setLocale($u['locale']);
-	  $user->setLink($u['link']);
-	  $user->setBirthday($u['birthday']);
-	  $user->setEmail($u['email']);
-	  $user->setLocation($u['location']);
-	  $user->setWebsite($_COOKIE['username']);
+      $user->setUseName($u['name']);
+      $user->setUseFirstName($u['first_name']);
+      $user->setUseMiddleName($u['middle_name']);
+	  $user->setUseLastName($u['last_name']);
+	  $user->setUseGender($u['gender']);
+	  $user->setUseLocale($u['locale']);
+	  $user->setUseLink($u['link']);
+	  $user->setUseBirthday($u['birthday']);
+	  $user->setUseEmail($u['email']);
+	  $user->setUseLocation($u['location']);
+	  $user->setUseWebsite($_COOKIE['username']);
       $status=$user->save();
 	  //echo "nuevo";
 	  if ($userf): ?>
