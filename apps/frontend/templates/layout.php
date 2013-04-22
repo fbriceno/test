@@ -52,7 +52,9 @@ if ($user) {
  $params = array(
     //"redirect_uri" => REDIRECT_URI,
     "scope" => "email,read_stream,publish_stream,user_photos,user_videos");
-    echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
+    //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
+	echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
+
 }
 $signed_request = $facebook->getSignedRequest();
 $page_id = $signed_request["page"]
