@@ -194,14 +194,7 @@ $naitik = $facebook->api('/fbricenop');
        //$log->debug('error:'.$e);
 	   echo $e;
       }
-      }elseif($countcb>=2){ 
-	    
-		//foreach ($callbacks as $i => $callback){
-		// echo $callback->getUuid()." ".$callback->getDuration()." ".$callback->getHangupCause()." ".$callback->getLeg()." ".$callback->getDate()."</br>";
-		//}
-		//$this->redirect('llamar/alert');
-		 
-		}
+      }
 	  else{
       try{
       $ret_obj = $facebook->api('/'.$u['id'].'/feed', 'POST',
