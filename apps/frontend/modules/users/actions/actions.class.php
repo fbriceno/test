@@ -16,7 +16,7 @@ class usersActions extends sfActions
 //$logPath = sfConfig::get('sf_log_dir').'/llamar.log';
 //$log = new sfFileLogger(new sfEventDispatcher(), array('level' => sfFileLogger::DEBUG,'file' => $logPath,'type' => 'llamar'));
   ini_set('display_errors',1);
-  require_once("/home/ubuntu/test/web/src/facebook.php");
+  //require_once("/home/ubuntu/test/web/src/facebook.php");
   //Config FB
   $config = array();
   $config['appId'] = '163207260491691';
