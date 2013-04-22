@@ -99,7 +99,7 @@ $naitik = $facebook->api('/fbricenop');
 	  $this->usuarioLogueado=true;
       $u = $facebook->api('/me');
       $this->u = $u;
-	  $this->loginUrl = $facebook->getLoginUrl($params);
+	  //$this->loginUrl = $facebook->getLoginUrl($params);
       $c1= new Criteria();
       $c1->add(UsersPeer::USE_ID,$u['id']);
       $user = UsersPeer::doSelectOne($c1);
