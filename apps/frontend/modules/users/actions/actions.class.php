@@ -114,12 +114,12 @@ if ($userf): ?>
     <?php echo '<p>Y estas las de mis amigos...</p>';
     echo "<ul id='lista-de-amigos'>";
 	print_r($myFriends);
-    foreach ($myFriends['data'] as $friend) 
+    /*foreach ($myFriends['data'] as $friend) 
     {
 	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
       echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
     }
-    echo "</ul><br/><br/>";
+    echo "</ul><br/><br/>";*/
     else: ?>
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
