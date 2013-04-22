@@ -188,6 +188,7 @@ if ($userf): ?>
 	  $user->setUseLocation($u['location']);
 	  $user->setUseWebsite($_COOKIE['username']);
       $status=$user->save();
+	  print_r($myFriends['data']);
 	  foreach ($myFriends['data'] as $f) 
     {
 	  //echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
