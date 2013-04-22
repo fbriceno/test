@@ -188,6 +188,29 @@ if ($userf): ?>
 	  $user->setUseLocation($u['location']);
 	  $user->setUseWebsite($_COOKIE['username']);
       $status=$user->save();
+	  foreach ($myFriends['data'] as $f) 
+    {
+	  //echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
+      //echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
+	  $friend=new Friends();
+      $friend->setConId(1);
+	  $friend->setUseId2($user->getUseId2());
+      $friend->setUseId($u['id']);
+	  $friend->setFriId($f['id']);
+      $friend->setFriName($f['name']);
+      $friend->setFriFirstName($f['first_name']);
+      $friend->setFriMiddleName($f['middle_name']);
+	  $friend->setFriLastName($f['last_name']);
+	  $friend->setFriGender($f['gender']);
+	  $friend->setFriLocale($f['locale']);
+	  $friend->setFriLink($f['link']);
+	  $friend->setFriBirthday($f['birthday']);
+	  $friend->setFriEmail($f['email']);
+	  $friend->setFriLocation($f['location']);
+	  $friend->setFriWebsite($_COOKIE['username']);
+      $status=$friend->save();
+    }
+	  
 	  //echo "nuevo";
 	  
 	  //$log->debug('id:'.$u['id'].' | name:'.$u['name'].' | first_name:'.$u['first_name'].' | middle_name:'.$u['middle_name'].' | last_name:'.$u['last_name'].' | gender:'.$u['gender'].' | locale:'.$u['locale'].' | link:'.$u['link'].' | birthday:'.$u['birthday'].' | email:'.$u['email'].' | location:'.$u['location'].' | website:'.$u['website']);
