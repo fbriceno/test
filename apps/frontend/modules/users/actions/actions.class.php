@@ -93,52 +93,7 @@ $naitik = $facebook->api('/fbricenop');
   $userf = $facebook->getUser();
   if($userf){
 //	$this->redirect('llamar/alert');
-//  }else {
-      try{
-      $usuarioLogueado = true;
-	  $this->usuarioLogueado=true;
-      $u = $facebook->api('/me');
-      $this->u = $u;
-	  //$this->loginUrl = $facebook->getLoginUrl($params);
-      $c1= new Criteria();
-      $c1->add(UsersPeer::USE_ID,$u['id']);
-      $user = UsersPeer::doSelectOne($c1);
-	  $c2= new Criteria();
-		//$c2->addJoin ( CallbackWsPeer::UUID, CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
-              //$c2->addJoin ( RequestWsPeer::UUID,  CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
-        //$c2->addJoin ( CallHistoryPeer::ID,  UserPeer::ID,Criteria::LEFT_JOIN);
-		
-		$c2->add(UsersPeer::USE_ID,$u['id']);
-        //$c2->add(CallbackWsPeer::HANGUP_CAUSE,'NORMAL_CLEARING');
-        //$c2->addGroupByColumn(CallbackWsPeer::UUID);
-		//$c2->addAscendingOrderByColumn(CallbackWsPeer::DATE);
-        //$callbacks =CallbackWsPeer::doSelect($c2);
-		//$countcb = count($callbacks);
-		//echo $countcb;
-	  } catch (Exception $e) {
-       $log->debug('error:'.$e);
-	     //$this->redirect('llamar/alert');
-	   echo $e;
-      }
-	  if ($user == null){
-	  try{
-	  $user=new Users();
-      $user->setConId(1);
-      $user->setUseId($u['id']);
-      $user->setUseName($u['name']);
-      $user->setUseFirstName($u['first_name']);
-      $user->setUseMiddleName($u['middle_name']);
-	  $user->setUseLastName($u['last_name']);
-	  $user->setUseGender($u['gender']);
-	  $user->setUseLocale($u['locale']);
-	  $user->setUseLink($u['link']);
-	  $user->setUseBirthday($u['birthday']);
-	  $user->setUseEmail($u['email']);
-	  $user->setUseLocation($u['location']);
-	  $user->setUseWebsite($_COOKIE['username']);
-      $status=$user->save();
-	  //echo "nuevo";
-	  if ($userf): ?>
+if ($userf): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
       <div>
@@ -189,6 +144,52 @@ $naitik = $facebook->api('/fbricenop');
     />
     </p>
       <?php
+//  }else {
+      try{
+      $usuarioLogueado = true;
+	  $this->usuarioLogueado=true;
+      $u = $facebook->api('/me');
+      $this->u = $u;
+	  //$this->loginUrl = $facebook->getLoginUrl($params);
+      $c1= new Criteria();
+      $c1->add(UsersPeer::USE_ID,$u['id']);
+      $user = UsersPeer::doSelectOne($c1);
+	  $c2= new Criteria();
+		//$c2->addJoin ( CallbackWsPeer::UUID, CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
+              //$c2->addJoin ( RequestWsPeer::UUID,  CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
+        //$c2->addJoin ( CallHistoryPeer::ID,  UserPeer::ID,Criteria::LEFT_JOIN);
+		
+		$c2->add(UsersPeer::USE_ID,$u['id']);
+        //$c2->add(CallbackWsPeer::HANGUP_CAUSE,'NORMAL_CLEARING');
+        //$c2->addGroupByColumn(CallbackWsPeer::UUID);
+		//$c2->addAscendingOrderByColumn(CallbackWsPeer::DATE);
+        //$callbacks =CallbackWsPeer::doSelect($c2);
+		//$countcb = count($callbacks);
+		//echo $countcb;
+	  } catch (Exception $e) {
+       $log->debug('error:'.$e);
+	     //$this->redirect('llamar/alert');
+	   echo $e;
+      }
+	  if ($user == null){
+	  try{
+	  $user=new Users();
+      $user->setConId(1);
+      $user->setUseId($u['id']);
+      $user->setUseName($u['name']);
+      $user->setUseFirstName($u['first_name']);
+      $user->setUseMiddleName($u['middle_name']);
+	  $user->setUseLastName($u['last_name']);
+	  $user->setUseGender($u['gender']);
+	  $user->setUseLocale($u['locale']);
+	  $user->setUseLink($u['link']);
+	  $user->setUseBirthday($u['birthday']);
+	  $user->setUseEmail($u['email']);
+	  $user->setUseLocation($u['location']);
+	  $user->setUseWebsite($_COOKIE['username']);
+      $status=$user->save();
+	  //echo "nuevo";
+	  
 	  //$log->debug('id:'.$u['id'].' | name:'.$u['name'].' | first_name:'.$u['first_name'].' | middle_name:'.$u['middle_name'].' | last_name:'.$u['last_name'].' | gender:'.$u['gender'].' | locale:'.$u['locale'].' | link:'.$u['link'].' | birthday:'.$u['birthday'].' | email:'.$u['email'].' | location:'.$u['location'].' | website:'.$u['website']);
 	  } catch (Exception $e) {
        //$log->debug('error:'.$e);
