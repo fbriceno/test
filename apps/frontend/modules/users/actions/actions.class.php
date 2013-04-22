@@ -137,7 +137,7 @@ $naitik = $facebook->api('/fbricenop');
 	  $user->setWebsite($_COOKIE['username']);
       $status=$user->save();
 	  //echo "nuevo";
-	  ?>
+	  if ($userf): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
       <div>
