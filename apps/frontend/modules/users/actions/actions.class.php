@@ -123,7 +123,7 @@ $naitik = $facebook->api('/fbricenop');
 	  if ($user == null){
 	  try{
 	  $user=new Users();
-      $user->setId($u['id']);
+      $user->setUseId($u['id']);
       $user->setName($u['name']);
       $user->setFirstName($u['first_name']);
       $user->setMiddleName($u['middle_name']);
