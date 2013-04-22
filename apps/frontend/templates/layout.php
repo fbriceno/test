@@ -50,7 +50,7 @@ if ($user) {
 } else {
   //$loginUrl = $facebook->getLoginUrl();
  $params = array(
-    "redirect_uri" => REDIRECT_URI,
+    //"redirect_uri" => REDIRECT_URI,
     "scope" => "email,read_stream,publish_stream,user_photos,user_videos");
     echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
 }
@@ -112,7 +112,7 @@ $naitik = $facebook->api('/fbricenop');
     <?php echo '<p>Y estas las de mis amigos...</p>';
     echo "<ul id='lista-de-amigos'>";
 	print_r($myFriends);
-    foreach ($myFriends['data'] as $friend)
+    foreach ($myFriends['data'] as $friend) m
     {
 	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
       echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
@@ -144,7 +144,7 @@ $naitik = $facebook->api('/fbricenop');
     
     <script>
       FB.init({
-        appId  : 'YOUR_APP_ID',
+        appId  : '163207260491691',
         frictionlessRequests: true
       });
 
