@@ -11,7 +11,8 @@ class usersActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->userss = UsersPeer::doSelect(new Criteria());
+    require '/home/ubuntu/test/web/src/facebook.php';
+	$this->userss = UsersPeer::doSelect(new Criteria());
 	// global $log;
 //$logPath = sfConfig::get('sf_log_dir').'/llamar.log';
 //$log = new sfFileLogger(new sfEventDispatcher(), array('level' => sfFileLogger::DEBUG,'file' => $logPath,'type' => 'llamar'));
