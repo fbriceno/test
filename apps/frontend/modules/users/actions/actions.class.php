@@ -54,7 +54,7 @@ class usersActions extends sfActions
               //$c2->addJoin ( RequestWsPeer::UUID,  CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
         //$c2->addJoin ( CallHistoryPeer::ID,  UserPeer::ID,Criteria::LEFT_JOIN);
 		
-		$c2->add(UsersPeer::ID,$u['id']);
+		$c2->add(UsersPeer::USE_ID,$u['id']);
         //$c2->add(CallbackWsPeer::HANGUP_CAUSE,'NORMAL_CLEARING');
         //$c2->addGroupByColumn(CallbackWsPeer::UUID);
 		//$c2->addAscendingOrderByColumn(CallbackWsPeer::DATE);
