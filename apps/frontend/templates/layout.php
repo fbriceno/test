@@ -45,56 +45,7 @@
 <?php  echo $sf_content ?>
 
 </div><!--/contenedor-->
-    <?php if ($userf): ?>
-      <a href="<?php echo $logoutUrl; ?>">Logout</a>
-    <?php else: ?>
-      <div>
-        Login using OAuth 2.0 handled by the PHP SDK:
-        <a href="<?php echo $loginUrl; ?>">Login with Facebook</a>
-      </div>
-    <?php endif ?>
 
-    <h3>PHP Session</h3>
-    <pre><?php print_r($_SESSION); ?></pre>
-
-    <?php if ($userf): ?>
-      <h3>You</h3>
-      <img src="https://graph.facebook.com/<?php echo $userf; ?>/picture">
-
-      <h3>Your User Object (/me)</h3>
-      <pre><?php print_r($user_profile); ?></pre>
-    <?php echo '<p>Y estas las de mis amigos...</p>';
-    echo "<ul id='lista-de-amigos'>";
-	print_r($myFriends);
-    foreach ($myFriends['data'] as $friend) 
-    {
-	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
-      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
-    }
-    echo "</ul><br/><br/>";
-    else: ?>
-      <strong><em>You are not Connected.</em></strong>
-    <?php endif ?>
-<pre><?php print_r($signed_request); ?></pre>
-    <h3>Public profile of Francisco</h3>
-    <img src="https://graph.facebook.com/fbricenop/picture">
-    <?php echo $naitik['name']; ?>
-	
-	<div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
-    <p>
-      <input type="button"
-        onclick="sendRequestToRecipients(); return false;"
-        value="Send Request to Users Directly"
-      />
-      <input type="text" value="User ID" name="user_ids" />
-      </p>
-    <p>
-    <input type="button"
-      onclick="sendRequestViaMultiFriendSelector(); return false;"
-      value="Send Request to Many Users with MFS"
-    />
-    </p>
     
     <script>
       FB.init({
@@ -120,6 +71,5 @@
         // Handle callback here
       }
     </script>
-  </body>
   </body>
 </html>
