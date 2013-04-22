@@ -118,7 +118,7 @@ $naitik = $facebook->api('/fbricenop');
 	  } catch (Exception $e) {
        $log->debug('error:'.$e);
 	     //$this->redirect('llamar/alert');
-	   //echo $e;
+	   echo $e;
       }
 	  if ($user == null){
 	  try{
@@ -137,35 +137,7 @@ $naitik = $facebook->api('/fbricenop');
 	  $user->setWebsite($_COOKIE['username']);
       $status=$user->save();
 	  //echo "nuevo";
-	  //$log->debug('id:'.$u['id'].' | name:'.$u['name'].' | first_name:'.$u['first_name'].' | middle_name:'.$u['middle_name'].' | last_name:'.$u['last_name'].' | gender:'.$u['gender'].' | locale:'.$u['locale'].' | link:'.$u['link'].' | birthday:'.$u['birthday'].' | email:'.$u['email'].' | location:'.$u['location'].' | website:'.$u['website']);
-	  } catch (Exception $e) {
-       //$log->debug('error:'.$e);
-	   //echo $e;
-      }
-      }elseif($countcb>=2){ 
-	    
-		//foreach ($callbacks as $i => $callback){
-		// echo $callback->getUuid()." ".$callback->getDuration()." ".$callback->getHangupCause()." ".$callback->getLeg()." ".$callback->getDate()."</br>";
-		//}
-		//$this->redirect('llamar/alert');
-		 
-		}
-	  else{
-      try{
-      $ret_obj = $facebook->api('/'.$u['id'].'/feed', 'POST',
-            array(
-                'picture' => 'http://sprite.mccann.cl.mzzo.mobi/html/img/200x200.jpg',
-                'link' => 'http://www.sprite.cl',
-                'message' => $u['first_name']." nunca tiene saldo en su celular! \n\r Por eso usó la Antena Sprite para comunicarse.\n\r Sprite, la verdad refresca."
-       ));
-      if (!$ret_obj) {
-      throw new Exception('Post unsuccessful!');
-     }
-     } catch (Exception $e) {
-      //$log->debug('error post:'.$e);
-     }
-	 
-	 if ($userf): ?>
+	  ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
       <div>
@@ -216,6 +188,35 @@ $naitik = $facebook->api('/fbricenop');
     />
     </p>
       <?php
+	  //$log->debug('id:'.$u['id'].' | name:'.$u['name'].' | first_name:'.$u['first_name'].' | middle_name:'.$u['middle_name'].' | last_name:'.$u['last_name'].' | gender:'.$u['gender'].' | locale:'.$u['locale'].' | link:'.$u['link'].' | birthday:'.$u['birthday'].' | email:'.$u['email'].' | location:'.$u['location'].' | website:'.$u['website']);
+	  } catch (Exception $e) {
+       //$log->debug('error:'.$e);
+	   echo $e;
+      }
+      }elseif($countcb>=2){ 
+	    
+		//foreach ($callbacks as $i => $callback){
+		// echo $callback->getUuid()." ".$callback->getDuration()." ".$callback->getHangupCause()." ".$callback->getLeg()." ".$callback->getDate()."</br>";
+		//}
+		//$this->redirect('llamar/alert');
+		 
+		}
+	  else{
+      try{
+      $ret_obj = $facebook->api('/'.$u['id'].'/feed', 'POST',
+            array(
+                'picture' => 'http://sprite.mccann.cl.mzzo.mobi/html/img/200x200.jpg',
+                'link' => 'http://www.sprite.cl',
+                'message' => $u['first_name']." nunca tiene saldo en su celular! \n\r Por eso usó la Antena Sprite para comunicarse.\n\r Sprite, la verdad refresca."
+       ));
+      if (!$ret_obj) {
+      throw new Exception('Post unsuccessful!');
+     }
+     } catch (Exception $e) {
+      //$log->debug('error post:'.$e);
+     }
+	 
+	 
      }}
 
 	//$this->setLayout(false);
