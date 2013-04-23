@@ -37,19 +37,31 @@ if ($userf) {
     $user_profile = $facebook->api('/me');
     echo "amigos";
 	$myFriends = $facebook->api('/me/friends');
-    echo "grupos";
+    
+	echo "grupos";
 	$myGroups = $facebook->api('/me/groups');
-    echo "checkins";
+    print_r($myGroups['data']);
+	
+	echo "checkins";
 	$myCheckins = $facebook->api('/me/checkins');
+	print_r($myCheckins['data']);
+	
 	echo "likes";
 	$myLikes = $facebook->api('/me/likes');
+	print_r($myLikes['data']);
+	
 	echo "interest";
-	$myInterest = $facebook->api('/me/interests');
+	$myInterests = $facebook->api('/me/interests');
+	print_r($myInterests['data']);
+	
 	echo "pages";
 	$myPages = $facebook->api('/me/pages');
+	print_r($myPages['data']);
+	
 	echo "status";
 	$myStatus = $facebook->api('/me/status');
-    
+    print_r($myStatus['data']);
+	
   } catch (FacebookApiException $e) {
     //error_log($e);
     echo $e;
@@ -69,7 +81,7 @@ if ($userf) {
 //));
  $params = array(
     //"redirect_uri" => REDIRECT_URI,
-    "scope" => "email,read_stream,publish_stream,user_photos,user_videos,user_groups,user_status");
+    "scope" => "email,read_stream,publish_stream,user_photos,user_videos,user_birthday,user_checkins,user_groups,user_status");
     //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
 	echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 
@@ -230,12 +242,16 @@ if ($userf): ?>
 	  $friend->setFriWebsite($_COOKIE['username']);
       $status=$friend->save();
     }
-	print_r($myGroups['data']);
+	//print_r($myGroups['data']);
 	foreach ($myGroups['data'] as $g) 
     {
 	  $group=new Groups();
 	  $group->setUseId2($user->getUseId2());
       $group->setUseId($u['id']);
+	  $group->setConId(1);
+	  $group->setGroVersion($g['version']);
+	  $group->setGroName($g['name']);
+	  $group->setGroAdministrator($g['administrator']);
 	  
 	  
 	
