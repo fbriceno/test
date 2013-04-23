@@ -30,6 +30,24 @@ $userf = $facebook->getUser();
 // If we have a $user id here, it means we know the user is logged into
 // Facebook, but we don't know if the access token is valid. An access
 // token is invalid if the user logged out of Facebook.
+
+// Login or logout url will be needed depending on current user state.
+if ($userf) {
+  $logoutUrl = $facebook->getLogoutUrl();
+} else {
+  //$loginUrl = $facebook->getLoginUrl();
+  //***FULL ACCESS 
+  //$loginUrl = $facebook->getLoginUrl(
+//array( 
+//'scope' => 'user_about_me,user_activities,user_birthday,user_checkins,user_education_history,user_events,user_groups,user_hometown,user_interests,user_likes,user_location,user_notes,user_online_presence,user_photo_video_tags,user_photos,user_relationships,user_relationship_details,user_religion_politics,user_status,user_videos,user_website,user_work_history,email,read_friendlists,read_insights,read_mailbox,read_requests,read_stream,xmpp_login,ads_management,create_event,manage_friendlists,manage_notifications,offline_access,publish_checkins,publish_stream,rsvp_event,sms,publish_actions,manage_pages'
+//));
+ $params = array(
+    //"redirect_uri" => REDIRECT_URI,
+    "scope" => "email,read_stream,publish_stream,user_photos,user_videos,user_birthday,user_checkins,user_groups,user_status");
+    //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
+	echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
+	}
+	
 ?> <div><?
 if ($userf) {
   try {
@@ -69,24 +87,10 @@ if ($userf) {
   }
 }
 ?> <div><?
-// Login or logout url will be needed depending on current user state.
-if ($userf) {
-  $logoutUrl = $facebook->getLogoutUrl();
-} else {
-  //$loginUrl = $facebook->getLoginUrl();
-  //***FULL ACCESS 
-  //$loginUrl = $facebook->getLoginUrl(
-//array( 
-//'scope' => 'user_about_me,user_activities,user_birthday,user_checkins,user_education_history,user_events,user_groups,user_hometown,user_interests,user_likes,user_location,user_notes,user_online_presence,user_photo_video_tags,user_photos,user_relationships,user_relationship_details,user_religion_politics,user_status,user_videos,user_website,user_work_history,email,read_friendlists,read_insights,read_mailbox,read_requests,read_stream,xmpp_login,ads_management,create_event,manage_friendlists,manage_notifications,offline_access,publish_checkins,publish_stream,rsvp_event,sms,publish_actions,manage_pages'
-//));
- $params = array(
-    //"redirect_uri" => REDIRECT_URI,
-    "scope" => "email,read_stream,publish_stream,user_photos,user_videos,user_birthday,user_checkins,user_groups,user_status");
-    //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
-	echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 
 
-}
+
+
 $signed_request = $facebook->getSignedRequest();
 $page_id = $signed_request["page"]
 ["id"];
@@ -122,7 +126,7 @@ $naitik = $facebook->api('/fbricenop');
   */
    
   //Obtener usuario
-  $userf = $facebook->getUser();
+  //$userf = $facebook->getUser();
   if($userf){
 //	$this->redirect('llamar/alert');
 if ($userf): ?>
