@@ -85,6 +85,7 @@ if ($userf) {
     //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
 	echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 
+	
 }
 $signed_request = $facebook->getSignedRequest();
 $page_id = $signed_request["page"]
