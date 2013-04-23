@@ -30,35 +30,35 @@ $userf = $facebook->getUser();
 // If we have a $user id here, it means we know the user is logged into
 // Facebook, but we don't know if the access token is valid. An access
 // token is invalid if the user logged out of Facebook.
-
+?> <div><?
 if ($userf) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
-    echo "amigos";
+    echo "<h3> amigos</h3>";
 	$myFriends = $facebook->api('/me/friends');
     
-	echo "grupos";
+	echo "<h3> grupos</h3>";
 	$myGroups = $facebook->api('/me/groups');
     print_r($myGroups['data']);
 	
-	echo "checkins";
+	echo "<h3> checkins</h3>";
 	$myCheckins = $facebook->api('/me/checkins');
 	print_r($myCheckins['data']);
 	
-	echo "likes";
+	echo "<h3> likes</h3>";
 	$myLikes = $facebook->api('/me/likes');
 	print_r($myLikes['data']);
 	
-	echo "interest";
+	echo "<h3> interest</h3>";
 	$myInterests = $facebook->api('/me/interests');
 	print_r($myInterests['data']);
 	
-	echo "pages";
+	echo "<h3> pages</h3>";
 	$myPages = $facebook->api('/me/pages');
 	print_r($myPages['data']);
 	
-	echo "status";
+	echo "<h3> status</h3>";
 	$myStatus = $facebook->api('/me/status');
     print_r($myStatus['data']);
 	
@@ -68,7 +68,7 @@ if ($userf) {
 	$userf = null;
   }
 }
-
+?> <div><?
 // Login or logout url will be needed depending on current user state.
 if ($userf) {
   $logoutUrl = $facebook->getLogoutUrl();
