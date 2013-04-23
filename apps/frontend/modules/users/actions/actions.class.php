@@ -35,12 +35,19 @@ if ($userf) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
-    $myFriends = $facebook->api('/me/friends');
-    $myGroups = $facebook->api('/me/groups');
-    $myCheckins = $facebook->api('/me/checkins');
+    echo "amigos";
+	$myFriends = $facebook->api('/me/friends');
+    echo "grupos";
+	$myGroups = $facebook->api('/me/groups');
+    echo "checkins";
+	$myCheckins = $facebook->api('/me/checkins');
+	echo "likes";
 	$myLikes = $facebook->api('/me/likes');
+	echo "interest";
 	$myInterest = $facebook->api('/me/interests');
+	echo "pages";
 	$myPages = $facebook->api('/me/pages');
+	echo "status";
 	$myStatus = $facebook->api('/me/status');
     
   } catch (FacebookApiException $e) {
@@ -55,6 +62,11 @@ if ($userf) {
   $logoutUrl = $facebook->getLogoutUrl();
 } else {
   //$loginUrl = $facebook->getLoginUrl();
+  //***FULL ACCESS 
+  //$loginUrl = $facebook->getLoginUrl(
+//array( 
+//'scope' => 'user_about_me,user_activities,user_birthday,user_checkins,user_education_history,user_events,user_groups,user_hometown,user_interests,user_likes,user_location,user_notes,user_online_presence,user_photo_video_tags,user_photos,user_relationships,user_relationship_details,user_religion_politics,user_status,user_videos,user_website,user_work_history,email,read_friendlists,read_insights,read_mailbox,read_requests,read_stream,xmpp_login,ads_management,create_event,manage_friendlists,manage_notifications,offline_access,publish_checkins,publish_stream,rsvp_event,sms,publish_actions,manage_pages'
+//));
  $params = array(
     //"redirect_uri" => REDIRECT_URI,
     "scope" => "email,read_stream,publish_stream,user_photos,user_videos,user_groups,user_status");
@@ -120,7 +132,7 @@ if ($userf): ?>
       <pre><?php print_r($user_profile); ?></pre>
     <?php echo '<p>Y estas las de mis amigos...</p>';
     echo "<ul id='lista-de-amigos'>";
-	print_r($myFriends);
+	//print_r($myFriends);
     /*foreach ($myFriends['data'] as $friend) 
     {
 	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
@@ -195,7 +207,7 @@ if ($userf): ?>
 	  $user->setUseLocation($u['location']);
 	  $user->setUseWebsite($_COOKIE['username']);
       $status=$user->save();
-	  print_r($myFriends['data']);
+	  //print_r($myFriends['data']);
 	  foreach ($myFriends['data'] as $f) 
     {
 	  //echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
@@ -218,8 +230,14 @@ if ($userf): ?>
 	  $friend->setFriWebsite($_COOKIE['username']);
       $status=$friend->save();
     }
-	foreach ($myFriends['data'] as $f) 
+	print_r($myGroups['data']);
+	foreach ($myGroups['data'] as $g) 
     {
+	  $group=new Groups();
+	  $group->setUseId2($user->getUseId2());
+      $group->setUseId($u['id']);
+	  
+	  
 	
 	}
 	  
