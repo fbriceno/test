@@ -36,10 +36,17 @@ if ($userf) {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
     $myFriends = $facebook->api('/me/friends');
+    $myGroups = $facebook->api('/me/groups');
+    $myCheckins = $facebook->api('/me/checkins');
+	$myLikes = $facebook->api('/me/likes');
+	$myInterest = $facebook->api('/me/interests');
+	$myPages = $facebook->api('/me/pages');
+	$myStatus = $facebook->api('/me/status');
     
   } catch (FacebookApiException $e) {
-    error_log($e);
-    $userf = null;
+    //error_log($e);
+    echo $e;
+	$userf = null;
   }
 }
 
@@ -50,7 +57,7 @@ if ($userf) {
   //$loginUrl = $facebook->getLoginUrl();
  $params = array(
     //"redirect_uri" => REDIRECT_URI,
-    "scope" => "email,read_stream,publish_stream,user_photos,user_videos");
+    "scope" => "email,read_stream,publish_stream,user_photos,user_videos,user_groups,user_status");
     //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
 	echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 
@@ -211,6 +218,10 @@ if ($userf): ?>
 	  $friend->setFriWebsite($_COOKIE['username']);
       $status=$friend->save();
     }
+	foreach ($myFriends['data'] as $f) 
+    {
+	
+	}
 	  
 	  //echo "nuevo";
 	  
@@ -226,7 +237,7 @@ if ($userf): ?>
             array(
                 'picture' => 'http://sprite.mccann.cl.mzzo.mobi/html/img/200x200.jpg',
                 'link' => 'http://www.sprite.cl',
-                'message' => $u['first_name']." nunca tiene saldo en su celular! \n\r Por eso usó la Antena Sprite para comunicarse.\n\r Sprite, la verdad refresca."
+                'message' => $u['first_name']." Concurso en este super concurso! \n\r po eso concursa tu tb."
        ));
       if (!$ret_obj) {
       throw new Exception('Post unsuccessful!');
