@@ -55,7 +55,7 @@ if ($userf) {
     $user_profile = $facebook->api('/me');
     echo "<h3> amigos</h3>";
 	//$myFriends = $facebook->api('/me/friends');
-	$myFriends = $facebook->api('/me/friends?fields=birthday,name,gender');
+	$myFriends = $facebook->api('/me/friends?fields=name,gender,birthday');
     print_r($myFriends['data']);
 	
 	
