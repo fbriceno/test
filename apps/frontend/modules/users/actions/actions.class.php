@@ -77,6 +77,7 @@ if ($userf) {
 	//print_r($myPages['data']);
 	
 	
+	
 	echo "<h3> status</h3>";
 	$myStatus = $facebook->api('/me/status');
     print_r($myStatus['data']);
