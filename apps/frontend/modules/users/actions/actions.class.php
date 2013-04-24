@@ -80,7 +80,7 @@ if ($userf) {
 	
 	echo "<h3> status</h3>";
 	$myStatuses = $facebook->api('/me/statuses');
-    print_r($myStatus['data']);
+    print_r($myStatuses['data']);
 	
   } catch (FacebookApiException $e) {
     //error_log($e);
