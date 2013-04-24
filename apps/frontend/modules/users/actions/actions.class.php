@@ -72,9 +72,9 @@ if ($userf) {
 	$myInterests = $facebook->api('/me/interests');
 	print_r($myInterests['data']);
 	
-	echo "<h3> pages</h3>";
-	$myPages = $facebook->api('/me/pages');
-	print_r($myPages['data']);
+	//echo "<h3> pages</h3>";
+	//$myPages = $facebook->api('/me/pages');
+	//print_r($myPages['data']);
 	
 	echo "<h3> status</h3>";
 	$myStatus = $facebook->api('/me/status');
