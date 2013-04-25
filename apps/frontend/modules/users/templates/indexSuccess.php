@@ -133,7 +133,7 @@ if ($userf): ?>
 <pre><?php print_r($signed_request); ?></pre>
     <h3>Public profile of Francisco</h3>
     <img src="https://graph.facebook.com/fbricenop/picture">
-    <?php echo $naitik['name']; ?>
+    <?php //echo $naitik['name']; ?>
 	
 	<div id="fb-root"></div>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
