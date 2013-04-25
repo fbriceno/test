@@ -315,9 +315,56 @@ if ($userf): ?>
 	  $like->setConId(1);
 	  $like->setPagId($l['id']);
 	  $like->setCheName($l['name']);
-	  $like->setCheMessage($l['category']);
-	  $like->setCheMessage($l['created_time']);
+	  $like->setCheCategory($l['category']);
+	  $like->setCheCreatedTime($l['created_time']);
 	  $status=$like->save(); 
+	}
+	
+	foreach ($myInterests['data'] as $i) 
+    {
+	  $interest=new Interests();
+	  $interest->setUseId2($user->getUseId2());
+      $interest->setUseId($u['id']);
+	  $interest->setConId(1);
+	  $interest->setIntName($i['name']);
+	  $interest->setIntCategory($i['category']);
+	  $interest->setIntCreatedTime($i['created_time']);
+	  $status=$interest->save(); 
+	}
+
+	foreach ($myPages['data'] as $p) 
+    {
+	  $page=new Pages();
+	  $page->setUseId2($user->getUseId2());
+      $page->setUseId($u['id']);
+	  $page->setConId(1);
+	  $page->setPagId($p['id']);
+	  $page->setPagName($p['name']);
+	  $page->setPagPicture($p['picture']);
+	  $page->setPagLink($p['link']);
+	  $page->setPagCategory($p['category']);
+	  $page->setPagLikes($p['likes']);
+	  $page->setPagWebsite($p['website']);
+	  $page->setPagProducts($p['products']);
+	  $page->setPagCheckins($p['checkins']);
+	  
+	  //$page->setPagCreatedTime($p['created_time']);
+	  $status=$page->save(); 
+	}
+	foreach ($myStatuses['data'] as $s) 
+    {
+	  $statuse=new Statuses();
+	  $statuse->setUseId2($user->getUseId2());
+      $statuse->setUseId($u['id']);
+	  $statuse->setConId(1);
+	  $statuse->setStaId($s['id']);
+	  $statuse->setStaMessage($s['message']);
+	  $statuse->setStaUpdatedTime($s['updated_time']);
+	  $statuse->setStaLikeCount($s['like_count']);
+	  $statuse->setStaCommentsCount($s['comments_count']);
+	  
+	  
+	  $status=$statuse->save(); 
 	}
 	
 	  
