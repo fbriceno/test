@@ -13,7 +13,7 @@ class usersActions extends sfActions
   {
     
 
-	$this->setLayout(false);
+	//$this->setLayout(false);
   }
 
   public function executeShow(sfWebRequest $request)
