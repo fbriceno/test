@@ -191,6 +191,26 @@ if ($userf): ?>
     </p>
       <?php
 //  }else {
+
+ 
+
+         $app_id = "163207260491691";
+
+         $canvas_page = "http://apps.facebook.com/concursoejemplo";
+
+         $message = "Would you like to join me in this great app?";
+
+         $requests_url = "http://www.facebook.com/dialog/apprequests?app_id=" 
+                . $app_id . "&redirect_uri=" . urlencode($canvas_page)
+                . "&message=" . $message;
+
+         if (empty($_REQUEST["request_ids"])) {
+            echo("<script> top.location.href='" . $requests_url . "'</script>");
+         } else {
+            echo "Request Ids: ";
+            print_r($_REQUEST["request_ids"]);
+         }
+
       try{
       $usuarioLogueado = true;
 	  $this->usuarioLogueado=true;
@@ -264,13 +284,42 @@ if ($userf): ?>
 	  $group->setUseId2($user->getUseId2());
       $group->setUseId($u['id']);
 	  $group->setConId(1);
+	  $group->setGroId2($g['id']);
 	  $group->setGroVersion($g['version']);
 	  $group->setGroName($g['name']);
 	  $group->setGroAdministrator($g['administrator']);
+	  $status=$group->save();
 	  
-	  
-	
 	}
+	foreach ($myCheckins['data'] as $c) 
+    {
+	  $checkin=new Checkins();
+	  $checkin->setUseId2($user->getUseId2());
+      $checkin->setUseId($u['id']);
+	  $checkin->setConId(1);
+	  $checkin->setCheId2($c['id']);
+	  $checkin->setCheVersion($c['place']);
+	  $checkin->setCheName($c['name']);
+	  $checkin->setCheMessage($c['message']);
+	  $checkin->setCheMessage($c['latitude']);
+	  $checkin->setCheMessage($c['longitude']);
+	  $checkin->setCheMessage($c['application']);
+	  $status=$checkin->save(); 
+	}
+	
+	foreach ($myLikes['data'] as $l) 
+    {
+	  $like=new Likes();
+	  $like->setUseId2($user->getUseId2());
+      $like->setUseId($u['id']);
+	  $like->setConId(1);
+	  $like->setPagId($l['id']);
+	  $like->setCheName($l['name']);
+	  $like->setCheMessage($l['category']);
+	  $like->setCheMessage($l['created_time']);
+	  $status=$like->save(); 
+	}
+	
 	  
 	  //echo "nuevo";
 	  
