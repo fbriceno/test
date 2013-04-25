@@ -82,7 +82,7 @@ if ($userf) {
     'method' => 'fql.query',  
     'query' => 'SELECT page_id,app_id,pic,name,page_url,website,fan_count,new_like_count,checkins,founded,products FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=me());'  
 ));  
-		print_r($myPages['data']);
+	print_r($myPages);
 	
 	
 	
