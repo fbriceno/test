@@ -102,29 +102,7 @@ $locale = $signed_request["user"]
 ["locale"];
 
 
-// This call will always work since we are fetching public data.
-//$naitik = $facebook->api('/fbricenop');
-/*require_once("/home/ubuntu/test/web/src/facebook.php");
-  //Config FB
-  $config = array();
-  $config['appId'] = '163207260491691';
-  
-  //$config['appId'] = '439345492779960';
-  //$config['secret'] = 'e2b140f015c6a68a4de9b5d0b4a5262c';
-   $config['secret'] = '0d45ef52a848c029298c462209ee212c'; 
 
-  //FB
-  $facebook = new Facebook($config); 
-  $params = array(
-      'scope' => 'email,publish_stream',
-      //'redirect_uri' => 'http://sprite.mccann.cl.mzzo.mobi/llamar',
-      'display' => 'touch'
-   );
-  $usuarioLogueado = false;
-  */
-   
-  //Obtener usuario
-  //$userf = $facebook->getUser();
   if($userf){
 //	$this->redirect('llamar/alert');
 if ($userf): ?>
@@ -182,7 +160,7 @@ if ($userf): ?>
 
  
 
-         $app_id = "163207260491691";
+         /*$app_id = "163207260491691";
 
          $canvas_page = "http://apps.facebook.com/concursoejemplo";
 
@@ -197,7 +175,7 @@ if ($userf): ?>
          } else {
             echo "Request Ids: ";
             print_r($_REQUEST["request_ids"]);
-         }
+         }*/
 
       try{
       $usuarioLogueado = true;
