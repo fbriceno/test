@@ -33,7 +33,19 @@ if ($userf) {
     //"redirect_uri" => REDIRECT_URI,
     "scope" => "email,read_stream,publish_stream,user_photos,user_videos,user_birthday,user_checkins,user_groups,user_status,friends_birthday");
     //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
-	echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
+	?><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=163207260491691";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> 
+<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"> <?
+    echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
+	
+ ?> </div>
+	<?
 	}
 	
 // echo '<div>'
@@ -334,14 +346,7 @@ if ($userf) {
 	 
      }
 	 }else{ ?>
-	    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=163207260491691";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+	    
 	    <div align="center">
         <h3> Imagen de promocion no se entra hasta hacer me gusta </h3>
 		<div class="fb-like" data-href="http://www.ecabdo.cl" data-send="true" data-width="450" data-show-faces="true"></div
