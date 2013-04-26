@@ -99,27 +99,8 @@ $locale = $signed_request["user"]["locale"];
 
 
   if($userf){
-//	$this->redirect('llamar/alert');
-if ($userf): ?>
-      <a href="<?php echo $logoutUrl; ?>">Logout</a>
-    <?php else: ?>
-      <div>
-        Login using OAuth 2.0 handled by the PHP SDK:
-        <a href="<?php echo $loginUrl; ?>">Login with Facebook</a>
-      </div>
-    <?php endif ?>
-
-    <h3>PHP Session</h3>
-    <pre><?php print_r($_SESSION); ?></pre>
-
-    <?php if ($userf): ?>
-      <h3>You</h3>
-      <img src="https://graph.facebook.com/<?php echo $userf; ?>/picture">
-
-      <h3>Your User Object (/me)</h3>
-      <pre><?php print_r($user_profile); ?></pre>
-    <?php echo '<p>Y estas las de mis amigos...</p>';
-    echo "<ul id='lista-de-amigos'>";
+	// LISTA DE AMIGOS
+	
 	//print_r($myFriends);
     /*foreach ($myFriends['data'] as $friend) 
     {
@@ -127,10 +108,8 @@ if ($userf): ?>
       echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
     }
     echo "</ul><br/><br/>";*/
-    else: ?>
-      <strong><em>You are not Connected.</em></strong>
-    <?php endif ?>
-<pre><?php print_r($signed_request); ?></pre>
+	?>
+    <pre><?php print_r($signed_request); ?></pre>
     <h3>Public profile of Francisco</h3>
     <img src="https://graph.facebook.com/fbricenop/picture">
     <?php //echo $naitik['name']; ?>
@@ -194,7 +173,7 @@ if ($userf): ?>
 		//$countcb = count($callbacks);
 		//echo $countcb;
 	  } catch (Exception $e) {
-       $log->debug('error:'.$e);
+          //$log->debug('error:'.$e);
 	     //$this->redirect('llamar/alert');
 	   echo $e;
       }
@@ -354,4 +333,13 @@ if ($userf): ?>
 	 
 	 
      }
+	 }else{ ?>
+	    <div id="fb-root"></div>
+        <script src="http://connect.facebook.net/en_US/all.js"></script>
+	    <div align="center">
+        <h3> Imagen de promocion no se entra hasta hacer me gusta </h3>
+		<div class="fb-like"></div>
+		<img id="image"/>
+        <div id="name"></div>
+      </div> <?
 	 }
