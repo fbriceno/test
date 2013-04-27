@@ -45,7 +45,10 @@ if ($userf) {
     echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 	
  ?> </div>
+ 
 	<?
+	$fb_login = '<a href="' . $facebook->getLoginUrl() . '" class="fb-login-button"><img src="img/fb-login-button.png" border="0" /></a>';
+    echo $fb_login;
 	}
 	
 // echo '<div>'
