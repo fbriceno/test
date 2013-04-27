@@ -42,7 +42,7 @@ if ($userf) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script> 
 
-<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+<div class="fb-login-button" <? echo $params; ?> data-show-faces="true" data-width="200" data-max-rows="1"></div>
 <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"> <?
     echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 	
