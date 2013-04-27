@@ -41,6 +41,8 @@ if ($userf) {
   js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=163207260491691";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script> 
+
+<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
 <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"> <?
     echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 	
