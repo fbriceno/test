@@ -130,7 +130,7 @@ if ($userf) {
     'query' => 'SELECT uid FROM friendlist_member WHERE flid IN (SELECT flid FROM friendlist WHERE owner=me()  )'  
 ));  
 	
-	print_r($myInvited);
+	
 	
 	?>
 	<div id="fb-root"></div>
@@ -152,6 +152,7 @@ if ($userf) {
   <div>
     <p>Lista de amigos invitados</p>
     <p>&nbsp;</p>
+	print_r($myInvited);
   </div>
      <p> <? echo $namigos; ?> Amigos invitados</p>
 </div>
