@@ -46,7 +46,20 @@
       
       function requestCallback(response) {
         // Handle callback here
-		console.log(response);
+		if(reponse){ 
+           alert(response.request_ids);
+          $.ajax({
+             type: "POST",
+             url: "your_file.php",
+             req_ids="+response.request_ids,
+             });
+        }
+        console.log(response);
+		
+        for (var i = 0; i < response.to.length; ++i)
+        {
+        alert(response.to[i]);
+        }
       }
     </script>
   </body>
