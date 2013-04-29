@@ -144,7 +144,7 @@ if ($userf) {
 </p>
    <div id="fb-root"></div>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
-	<div>
+   <div>
    <p>
       <input type="button"
         onclick="sendRequestToRecipients(); return false;"
@@ -163,7 +163,7 @@ if ($userf) {
     <p>&nbsp;</p>
 	
   </div>
-     <p> <? print_r($myInvited); echo $namigos; ?> Amigos invitados</p>
+     <p> <? $namigos=0; print_r($myInvited); echo $namigos; ?> Amigos invitados</p>
 </div>
   
 	
