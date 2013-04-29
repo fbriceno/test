@@ -133,9 +133,7 @@ if ($userf) {
 	
 	
 	?>
-	<div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
-	<div>
+	
   <p>DREAMGIRLS TE REGALA UN LED 32’.<br />
     Invita a tus amigos y gana SMART TV SAMSUNG de 32 pulgadas..<br />
     Para participar sólo debes invitar a tus 10 mejores amigos a hacerse fan<br />
@@ -144,6 +142,9 @@ if ($userf) {
     de ganar. Si todos tus amigos aceptan tendrás el doble de oportunidades<br />
     de ganar.
 </p>
+   <div id="fb-root"></div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+	<div>
    <p>
       <input type="button"
         onclick="sendRequestToRecipients(); return false;"
