@@ -125,6 +125,13 @@ if ($userf) {
       echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
     }
     echo "</ul><br/><br/>";*/
+	$myInvited = $facebook->api(array(  
+    'method' => 'fql.query',  
+    'query' => 'SELECT uid FROM friendlist_member WHERE flid IN (SELECT flid FROM friendlist WHERE owner=me()  )'  
+));  
+	
+	print_r($myInvited);
+	
 	?>
 	<div id="fb-root"></div>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
