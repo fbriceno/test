@@ -126,25 +126,32 @@ if ($userf) {
     }
     echo "</ul><br/><br/>";*/
 	?>
-    <pre><?php print_r($signed_request); ?></pre>
-    <h3>Public profile of Francisco</h3>
-    <img src="https://graph.facebook.com/fbricenop/picture">
-    <?php //echo $naitik['name']; ?>
-	
 	<div id="fb-root"></div>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
-    <p>
-      <input type="button"
-        onclick="sendRequestToRecipients(); return false;"
-        value="Send Request to Users Directly"
-      />
-      <input type="text" value="User ID" name="user_ids" />
-      </p>
-    <p>
-    <input type="button"
+	<div>
+  <p>DREAMGIRLS TE REGALA UN LED 32’.<br />
+    Invita a tus amigos y gana SMART TV SAMSUNG de 32 pulgadas..<br />
+    Para participar sólo debes invitar a tus 10 mejores amigos a hacerse fan<br />
+    de Dreamgirls.<br />
+    Por cada amigo que se haga fan de Dreamgirls tendrás una opción más<br />
+    de ganar. Si todos tus amigos aceptan tendrás el doble de oportunidades<br />
+    de ganar.
+</p>
+   <input type="button"
       onclick="sendRequestViaMultiFriendSelector(); return false;"
-      value="Send Request to Many Users with MFS"
+      value="Invitar Amigos"
     />
+	
+  <div>
+    <p>Lista de amigos invitados</p>
+    <p>&nbsp;</p>
+  </div>
+     <p> <? echo $namigos; ?> Amigos invitados</p>
+</div>
+  
+	
+    <p>
+   
     </p>
       <?php
 //  }else {
