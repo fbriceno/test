@@ -144,11 +144,19 @@ if ($userf) {
     de ganar. Si todos tus amigos aceptan tendrás el doble de oportunidades<br />
     de ganar.
 </p>
-   <input type="button"
+   <p>
+      <input type="button"
+        onclick="sendRequestToRecipients(); return false;"
+        value="Send Request to Users Directly"
+      />
+      <input type="text" value="User ID" name="user_ids" />
+      </p>
+    <p>
+    <input type="button"
       onclick="sendRequestViaMultiFriendSelector(); return false;"
       value="Invitar Amigos"
     />
-	
+    </p>
   <div>
     <p>Lista de amigos invitados</p>
     <p>&nbsp;</p>
