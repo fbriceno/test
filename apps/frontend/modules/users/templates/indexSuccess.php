@@ -152,9 +152,9 @@ if ($userf) {
   <div>
     <p>Lista de amigos invitados</p>
     <p>&nbsp;</p>
-	print_r($myInvited);
+	
   </div>
-     <p> <? echo $namigos; ?> Amigos invitados</p>
+     <p> <? print_r($myInvited); echo $namigos; ?> Amigos invitados</p>
 </div>
   
 	
