@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 require '/home/ubuntu/test/web/src/facebook.php';
 	$this->userss = UsersPeer::doSelect(new Criteria());
 	// global $log;
@@ -134,12 +134,12 @@ if ($userf) {
 	
 	?>
 	
-  <p>DREAMGIRLS TE REGALA UN LED 32í.<br />
+  <p>DREAMGIRLS TE REGALA UN LED 32‚Äô.<br />
     Invita a tus amigos y gana SMART TV SAMSUNG de 32 pulgadas..<br />
-    Para participar sÛlo debes invitar a tus 10 mejores amigos a hacerse fan<br />
+    Para participar s√≥lo debes invitar a tus 10 mejores amigos a hacerse fan<br />
     de Dreamgirls.<br />
-    Por cada amigo que se haga fan de Dreamgirls tendr·s una opciÛn m·s<br />
-    de ganar. Si todos tus amigos aceptan tendr·s el doble de oportunidades<br />
+    Por cada amigo que se haga fan de Dreamgirls tendr√°s una opci√≥n m√°s<br />
+    de ganar. Si todos tus amigos aceptan tendr√°s el doble de oportunidades<br />
     de ganar.
 </p>
    <div id="fb-root"></div>
