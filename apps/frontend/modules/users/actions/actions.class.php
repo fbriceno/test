@@ -21,7 +21,7 @@ public function executeWsinvited(sfWebRequest $request)
 		$print_r($requests);
 		foreach($requests as $request_id) {
 			$request =explode('_',$request_id);
-			
+			echo $request[1];
 			 $c1= new Criteria();
              $c1->add(FriendsPeer::USE_ID,$uid);
 			 $c1->add(FriendsPeer::FRI_ID,$request[1]);
