@@ -67,7 +67,9 @@
                 var request_ids = [];
                 for(i=0; i<response.to.length; i++) {
                     var temp = response.request + '_' + response.to[i];
-                    request_ids.push(temp);
+                    //var temp =  response.to[i];
+                    
+					request_ids.push(temp);
 					//alert('prueba1'+ temp);
                 }
                 var requests = request_ids.join(',');
@@ -80,10 +82,10 @@
             }
         console.log(response);
 		
-        for (var i = 0; i < response.to.length; ++i)
+        /*for (var i = 0; i < response.to.length; ++i)
         {
         alert(response.to[i]);
-        }
+        }*/
       }
 	</script>
   </body>
