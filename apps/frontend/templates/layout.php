@@ -66,9 +66,9 @@
 		if (response.request && response.to) {
                 var request_ids = [];
                 for(i=0; i<response.to.length; i++) {
-				    alert('prueba1'+ response.request_ids);
                     var temp = response.request + '_' + response.to[i];
                     request_ids.push(temp);
+					alert('prueba1'+ temp);
                 }
                 var requests = request_ids.join(',');
                 $.post('handle_requests.php',{uid: '1137165926', request_ids: requests},function(resp) {
