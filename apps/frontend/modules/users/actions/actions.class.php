@@ -25,6 +25,7 @@ public function executeWsinvited(sfWebRequest $request)
 			 $c1= new Criteria();
              $c1->add(FriendsPeer::USE_ID,$request[1]);
             $friend = FriendsPeer::doSelectOne($c1);
+			echo $friend->getFriName();
 			$friend->setFriInvite(1);
 			$status=$friend->save();
 			//mysql_query("INSERT INTO fb_requests (fb_user_id, request_id) VALUES ('$uid', '$request_id')") or die("MySQL Error: " . mysql_error());
