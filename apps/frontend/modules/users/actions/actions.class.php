@@ -9,7 +9,7 @@
  */
 class usersActions extends sfActions
 {
-public function executeWsInvited(sfWebRequest $request)
+public function executeWsinvited(sfWebRequest $request)
   {
 	$this->setLayout(false);
 
