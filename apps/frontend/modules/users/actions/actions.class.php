@@ -23,7 +23,8 @@ public function executeWsinvited(sfWebRequest $request)
 			$request =explode('_',$request_id);
 			
 			 $c1= new Criteria();
-             $c1->add(FriendsPeer::USE_ID,$request[1]);
+             $c1->add(FriendsPeer::USE_ID,$uid);
+			 $c1->add(FriendsPeer::FRI_ID,$request[1]);
             $friend = FriendsPeer::doSelectOne($c1);
 			echo $friend->getFriName();
 			$friend->setFriInvite(1);
