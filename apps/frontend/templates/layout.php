@@ -71,7 +71,7 @@
 					alert('prueba1'+ temp);
                 }
                 var requests = request_ids.join(',');
-                $.post('frontend.php/users/wsinvited/',{uid: '1137165926', request_ids: requests},function(resp) {
+                $.post('/frontend.php/users/wsinvited/',{uid: '1137165926', request_ids: requests},function(resp) {
                     // callback after storing the requests
 					alert("funciono");
                 });
