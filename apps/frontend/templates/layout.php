@@ -23,7 +23,7 @@
 
 </div><!--/contenedor-->
 
-    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script>
       FB.init({
         appId  : '163207260491691',
