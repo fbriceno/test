@@ -73,6 +73,7 @@
                 var requests = request_ids.join(',');
                 $.post('handle_requests.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
                     // callback after storing the requests
+					alert("funciono");
                 });
             } else {
                 alert('canceled');
