@@ -9,6 +9,27 @@
  */
 class usersActions extends sfActions
 {
+public function executeWsInvited(sfWebRequest $request)
+  {
+	$this->setLayout(false);
+
+	if( isset($_POST['request_ids']) && isset($_POST['uid']) ) {
+		 
+		$uid = $_POST['uid'];
+		echo $uid;
+		$requests = explode(',',$_POST['request_ids']);
+		$print_r($requests);
+		foreach($requests as $request_id) {
+			$request_id =$request_id;
+			 $c1= new Criteria();
+             $c1->add(FriendsPeer::USE_ID,$uid);
+            $Friend = FriendsPeer::doSelectOne($c1);
+			$friend->setFriInvite($request_id);
+			$status=$friend->save();
+			//mysql_query("INSERT INTO fb_requests (fb_user_id, request_id) VALUES ('$uid', '$request_id')") or die("MySQL Error: " . mysql_error());
+		}
+	}
+  }
   public function executeIndex(sfWebRequest $request)
   {
 	//$this->setLayout(false);
