@@ -12,7 +12,7 @@ class usersActions extends sfActions
 public function executeWsinvited(sfWebRequest $request)
   {
 	$this->setLayout(false);
-
+    echo "hola";
 	if( isset($_POST['request_ids']) && isset($_POST['uid']) ) {
 		 
 		$uid = $_POST['uid'];
