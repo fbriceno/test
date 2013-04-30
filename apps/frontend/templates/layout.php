@@ -44,7 +44,7 @@
         }, requestCallback);
       }
       
-      function requestCallback(response) {
+      /*function requestCallback(response) {
         // Handle callback here
 		if(reponse){ 
            alert(response.request_ids);
@@ -60,7 +60,30 @@
         {
         alert(response.to[i]);
         }
+      }*/
+	  function requestCallback(response) {
+        // Handle callback here
+		if (response.request && response.to) {
+                var request_ids = [];
+                for(i=0; i<response.to.length; i++) {
+				    alert(response.request_ids);
+                    var temp = response.request + '_' + response.to[i];
+                    request_ids.push(temp);
+                }
+                var requests = request_ids.join(',');
+                $.post('handle_requests.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
+                    // callback after storing the requests
+                });
+            } else {
+                alert('canceled');
+            }
+        console.log(response);
+		
+        for (var i = 0; i < response.to.length; ++i)
+        {
+        alert(response.to[i]);
+        }
       }
-    </script>
+	</script>
   </body>
 </html>
