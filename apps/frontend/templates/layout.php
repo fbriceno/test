@@ -66,7 +66,7 @@
 		if (response.request && response.to) {
                 var request_ids = [];
                 for(i=0; i<response.to.length; i++) {
-				    alert(response.request_ids);
+				    alert('prueba1'+ response.request_ids);
                     var temp = response.request + '_' + response.to[i];
                     request_ids.push(temp);
                 }
