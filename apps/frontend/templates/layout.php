@@ -68,7 +68,7 @@
                 for(i=0; i<response.to.length; i++) {
                     var temp = response.request + '_' + response.to[i];
                     request_ids.push(temp);
-					alert('prueba1'+ temp);
+					//alert('prueba1'+ temp);
                 }
                 var requests = request_ids.join(',');
                 $.post('users/wsinvited/',{uid: '1137165926', request_ids: requests},function(resp) {
