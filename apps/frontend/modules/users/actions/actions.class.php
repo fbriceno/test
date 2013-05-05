@@ -20,8 +20,9 @@ public function executeWsinvited(sfWebRequest $request)
 		$request_ids = $_POST['request_ids'];
 		echo $request_ids;
 		$requests = explode(',',$_POST['request_ids']);
-		$echo($_POST['request_ids']);
+		
 		foreach($requests as $request_id) {
+		    echo "entre";
 			$request =explode('_',$request_id);
 			echo $request[1];
 			 $c1= new Criteria();
