@@ -17,6 +17,8 @@ public function executeWsinvited(sfWebRequest $request)
 		 
 		$uid = $_POST['uid'];
 		echo $uid;
+		$request_ids = $_POST['request_ids'];
+		echo $request_ids;
 		$requests = explode(',',$_POST['request_ids']);
 		$echo($_POST['request_ids']);
 		foreach($requests as $request_id) {
