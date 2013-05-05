@@ -70,9 +70,10 @@
                     //var temp =  response.to[i];
                     
 					request_ids.push(temp);
-					//alert('prueba1'+ temp);
+					alert('prueba1'+ temp);
                 }
                 var requests = request_ids.join(',');
+				alert(requests);
                 $.post('users/wsinvited/',{uid: '1137165926', request_ids: requests},function(resp) {
                     // callback after storing the requests
 					alert("funciono");
