@@ -289,8 +289,14 @@ echo $locale;
 	  $status=$statuse->save(); 
 	}
 	
-	
-	
+	 $cc= new Criteria();
+	  $cc->add(FriendsPeer::FRI_ID,$u['id']);
+      //$cc->add(FriendsPeer::FRI_INVITE,'0',Criteria::GREATER_THAN);
+      $myConfirmes = FriendsPeer::doSelect($cc);
+	  foreach ($myConfirmes as $cf){
+	   $cf->setFriInvite(2);
+	   $status=$cf->save();	
+	   }
 	  
 	  //echo "nuevo";
 	  
