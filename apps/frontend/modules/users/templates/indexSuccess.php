@@ -376,10 +376,10 @@ echo $locale;
     { 
 	 //print_r($friend);
       if ($friend['invite']=='2'){
-	  echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="http://www.axialis.com/objects/ip_icon_02_Ok.png"> </td></tr>';
+	  echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="http://www.axialis.com/objects/ip_icon_02_Ok.png" width="50" height="50"> </td></tr>';
       
 	  }else{
-	   echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="http://www.axialis.com/objects/ip_icon_02_Cancel.png"> </td></tr>';
+	   echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="http://www.axialis.com/objects/ip_icon_02_Cancel.png" width="50" height="50"> </td></tr>';
       
 	  }
 	  
