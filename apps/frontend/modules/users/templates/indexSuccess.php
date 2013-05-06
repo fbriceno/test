@@ -380,7 +380,9 @@ echo $locale;
     echo "</ul><br/><br/>"; ?></p>
 	
   </div>
-     <p> <? $namigos=0; print_r($myif); echo count($myif); ?> Amigos invitados</p>
+     <p> <? $namigos=0;
+	 //print_r($myif); 
+	 echo count($myif); ?> Amigos invitados</p>
 	 
 </div>
   
