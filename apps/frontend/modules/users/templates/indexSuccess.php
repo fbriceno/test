@@ -389,7 +389,7 @@ echo $locale;
   </div>
      <p> <? $namigos=0;
 	 //print_r($myif); 
-	 echo count($myif); ?> Amigos invitados</p>
+	 echo count($myif); ?> Amigos invitados de 10</p>
 	 
 </div>
   
@@ -447,13 +447,15 @@ echo $locale;
                     //var temp =  response.to[i];
                     
 					request_ids.push(temp);
-					alert('prueba1'+ temp);
+					//alert('prueba1'+ temp);
                 }
                 var requests = request_ids.join(',');
 				//alert(requests);
                 $.post('users/wsinvited/',{uid: '1137165926', request_ids: requests},function(resp) {
                     // callback after storing the requests
 					//alert("funciono");
+					$('#divp').show;
+					
                 });
             } else {
                 alert('canceled');
@@ -466,7 +468,18 @@ echo $locale;
         }*/
       }
 	</script>
-      <?php
+    <div id="divp" style="display: none;">
+	<p>YA ESTAS PARTICIPANDO POR UN SMART TV SAMSUNG de 32 pulgadas.<br />
+
+No olvides que los amigos que has invitado deben hacerse fan de la<br />
+página.<br />
+
+Lee las bases del concurso aquí.<br />
+
+Volver a la página de la promoción aquí.<br />
+   </p>
+	</div>
+	<?php
 //  }else {
 
  
