@@ -371,13 +371,20 @@ echo $locale;
     <p>Lista de amigos invitados</p>
     <p>&nbsp;
 	<? 
-	echo "<ul>"; 
+	echo "<table>"; 
 	foreach ($myif as $friend) 
     { 
 	 //print_r($friend);
-      echo '<li ><img src="https://graph.facebook.com/'.$friend['id']. '/picture">'. $friend{'name'} . '</li>';
-    }
-    echo "</ul><br/><br/>"; ?></p>
+      if ($friend['invite']=2){
+	  echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="http://www.axialis.com/objects/ip_icon_02_Ok.png"> </td></tr>';
+      
+	  }else{
+	   echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="http://www.axialis.com/objects/ip_icon_02_Cancel.png"> </td></tr>';
+      
+	  }
+	  
+	}
+    echo "</table><br/><br/>"; ?></p>
 	
   </div>
      <p> <? $namigos=0;
