@@ -148,10 +148,10 @@ echo $locale;
 		
 	  $ci= new Criteria();
 	  $ci->add(FriendsPeer::USE_ID,$u['id']);
-      $ci->add(FriendsPeer::FRI_INVITE,'1');
+      $ci->add(FriendsPeer::FRI_INVITE,'0',Criteria::GREATER_THAN);
       $myInvites = FriendsPeer::doSelect($ci);
 	  foreach ($myInvites as $if){
-	   $myif[]=array("id"=>$if->getFriId(),"name"=>$if->getFriName());
+	   $myif[]=array("id"=>$if->getFriId(),"name"=>$if->getFriName(),"invite"=>$if->getFriInvite());
 	  }
 	  
 	  } catch (Exception $e) {
