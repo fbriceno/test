@@ -370,7 +370,7 @@ echo $locale;
     { 
 	 //print_r($friend);
 	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
-      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" />'. $friend{'name'} . '</li>';
+      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" ></fb:profile-pic>'. $friend{'name'} . '</li>';
     }
     echo "</ul><br/><br/>"; ?></p>
 	
