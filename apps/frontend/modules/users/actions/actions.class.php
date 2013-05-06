@@ -12,24 +12,24 @@ class usersActions extends sfActions
 public function executeWsinvited(sfWebRequest $request)
   {
 	$this->setLayout(false);
-    echo "hola";
+    //echo "hola";
 	if( isset($_POST['request_ids']) && isset($_POST['uid']) ) {
 		 
 		$uid = $_POST['uid'];
-		echo $uid;
+		//echo $uid;
 		$request_ids = $_POST['request_ids'];
-		echo $request_ids;
+		//echo $request_ids;
 		$requests = explode(',',$_POST['request_ids']);
 		
 		foreach($requests as $request_id) {
-		    echo "entre";
+		    //echo "entre";
 			$request =explode('_',$request_id);
-			echo $request[1];
+			//echo $request[1];
 			 $c1= new Criteria();
              $c1->add(FriendsPeer::USE_ID,$uid);
 			 $c1->add(FriendsPeer::FRI_ID,$request[1]);
             $friend = FriendsPeer::doSelectOne($c1);
-			echo $friend->getFriName();
+			//echo $friend->getFriName();
 			$friend->setFriInvite(1);
 			$status=$friend->save();
 			//mysql_query("INSERT INTO fb_requests (fb_user_id, request_id) VALUES ('$uid', '$request_id')") or die("MySQL Error: " . mysql_error());
