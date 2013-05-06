@@ -417,7 +417,7 @@ echo $locale;
           message: 'My Great Request',
           filters:['app_non_users'],
           max_recipients: <? echo 10 - count($myif); ?>,
-          exclude_ids: [<? echo implode(',',$myif); ?>]
+          exclude_ids: [<? echo implode(',',$myif['id']); ?>]
         }, requestCallback);
       }
       
