@@ -122,81 +122,7 @@ echo $locale;
 
 
   if($userf){
-	// LISTA DE AMIGOS
 	
-	//print_r($myFriends);
-    /*foreach ($myFriends['data'] as $friend) 
-    {
-	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
-      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
-    }
-    echo "</ul><br/><br/>";*/
-	$myInvited = $facebook->api(array(  
-    'method' => 'fql.query',  
-    'query' => 'SELECT uid FROM friendlist_member WHERE flid IN (SELECT flid FROM friendlist WHERE owner=me()  )'  
-));  
-	
-	
-	
-	?>
-	
-  <p>DREAMGIRLS TE REGALA UN LED 32’.<br />
-    Invita a tus amigos y gana SMART TV SAMSUNG de 32 pulgadas..<br />
-    Para participar sólo debes invitar a tus 10 mejores amigos a hacerse fan<br />
-    de Dreamgirls.<br />
-    Por cada amigo que se haga fan de Dreamgirls tendrás una opción más<br />
-    de ganar. Si todos tus amigos aceptan tendrás el doble de oportunidades<br />
-    de ganar.
-</p>
-   <div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
-   <div>
-   <p>
-      <input type="button"
-        onclick="sendRequestToRecipients(); return false;"
-        value="Send Request to Users Directly"
-      />
-      <input type="text" value="User ID" name="user_ids" />
-      </p>
-    <p>
-    <input type="button"
-      onclick="sendRequestViaMultiFriendSelector(); return false;"
-      value="Invitar Amigos"
-    />
-    </p>
-  <div>
-    <p>Lista de amigos invitados</p>
-    <p>&nbsp;</p>
-	
-  </div>
-     <p> <? $namigos=0; print_r($myInvited); echo $namigos; ?> Amigos invitados</p>
-</div>
-  
-	
-    <p>
-   
-    </p>
-      <?php
-//  }else {
-
- 
-
-         /*$app_id = "163207260491691";
-
-         $canvas_page = "http://apps.facebook.com/concursoejemplo";
-
-         $message = "Would you like to join me in this great app?";
-
-         $requests_url = "http://www.facebook.com/dialog/apprequests?app_id=" 
-                . $app_id . "&redirect_uri=" . urlencode($canvas_page)
-                . "&message=" . $message;
-
-         if (empty($_REQUEST["request_ids"])) {
-            echo("<script> top.location.href='" . $requests_url . "'</script>");
-         } else {
-            echo "Request Ids: ";
-            print_r($_REQUEST["request_ids"]);
-         }*/
 
       try{
       $usuarioLogueado = true;
@@ -207,18 +133,26 @@ echo $locale;
       $c1= new Criteria();
       $c1->add(UsersPeer::USE_ID,$u['id']);
       $user = UsersPeer::doSelectOne($c1);
-	  $c2= new Criteria();
+	  //$c2= new Criteria();
 		//$c2->addJoin ( CallbackWsPeer::UUID, CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
               //$c2->addJoin ( RequestWsPeer::UUID,  CallHistoryPeer::UUID,Criteria::LEFT_JOIN);
         //$c2->addJoin ( CallHistoryPeer::ID,  UserPeer::ID,Criteria::LEFT_JOIN);
 		
-		$c2->add(UsersPeer::USE_ID,$u['id']);
+		//$c2->add(UsersPeer::USE_ID,$u['id']);
         //$c2->add(CallbackWsPeer::HANGUP_CAUSE,'NORMAL_CLEARING');
         //$c2->addGroupByColumn(CallbackWsPeer::UUID);
 		//$c2->addAscendingOrderByColumn(CallbackWsPeer::DATE);
         //$callbacks =CallbackWsPeer::doSelect($c2);
 		//$countcb = count($callbacks);
 		//echo $countcb;
+		
+	  $ci= new Criteria();
+	  $ci->add(FriendsPeer::USE_ID,$u['id']);
+      $ci->add(FriendsPeer::FRI_INVITE,'1');
+      $myInvites = FriendsPeer::doSelect($ci);
+	  foreach ($myInvites as $if){
+	   $myif[]=$if->getFriId();
+	  }
 	  } catch (Exception $e) {
           //$log->debug('error:'.$e);
 	     //$this->redirect('llamar/alert');
@@ -354,6 +288,8 @@ echo $locale;
 	  $status=$statuse->save(); 
 	}
 	
+	
+	
 	  
 	  //echo "nuevo";
 	  
@@ -380,6 +316,153 @@ echo $locale;
 	 
 	 
      }
+	 
+	 
+	 // LISTA DE AMIGOS
+	
+	//print_r($myFriends);
+    /*foreach ($myFriends['data'] as $friend) 
+    {
+	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
+      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
+    }
+    echo "</ul><br/><br/>";*/
+	/*$myInvited = $facebook->api(array(  
+    'method' => 'fql.query',  
+    'query' => 'SELECT uid FROM friendlist_member WHERE flid IN (SELECT flid FROM friendlist WHERE owner=me()  )'  
+));  */
+	
+	
+	
+	?>
+	
+  <p>DREAMGIRLS TE REGALA UN LED 32’.<br />
+    Invita a tus amigos y gana SMART TV SAMSUNG de 32 pulgadas..<br />
+    Para participar sólo debes invitar a tus 10 mejores amigos a hacerse fan<br />
+    de Dreamgirls.<br />
+    Por cada amigo que se haga fan de Dreamgirls tendrás una opción más<br />
+    de ganar. Si todos tus amigos aceptan tendrás el doble de oportunidades<br />
+    de ganar.
+</p>
+   <div id="fb-root"></div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+   <div>
+   <p>
+      <input type="button"
+        onclick="sendRequestToRecipients(); return false;"
+        value="Send Request to Users Directly"
+      />
+      <input type="text" value="User ID" name="user_ids" />
+      </p>
+    <p>
+    <input type="button"
+      onclick="sendRequestViaMultiFriendSelector(); return false;"
+      value="Invitar Amigos"
+    />
+    </p>
+  <div>
+    <p>Lista de amigos invitados</p>
+    <p>&nbsp;</p>
+	
+  </div>
+     <p> <? $namigos=0; print_r($myInvited); echo $namigos; ?> Amigos invitados</p>
+</div>
+  
+	
+    <p>
+   
+    </p>
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      FB.init({
+        appId  : '163207260491691',
+        frictionlessRequests: true
+      });
+
+      function sendRequestToRecipients() {
+        var user_ids = document.getElementsByName("user_ids")[0].value;
+        FB.ui({method: 'apprequests',
+          message: 'My Great Request',
+          to: user_ids
+        }, requestCallback);
+      }
+
+      function sendRequestViaMultiFriendSelector() {
+        FB.ui({method: 'apprequests',
+          message: 'My Great Request',
+          filters:['app_non_users'],
+          max_recipients: <? echo 10 - count($myif); ?>,
+          exclude_ids: [<? echo implode('-',$myif); ?>]
+        }, requestCallback);
+      }
+      
+      /*function requestCallback(response) {
+        // Handle callback here
+		if(reponse){ 
+           alert(response.request_ids);
+          $.ajax({
+             type: "POST",
+             url: "your_file.php",
+             req_ids="+response.request_ids,
+             });
+        }
+        console.log(response);
+		
+        for (var i = 0; i < response.to.length; ++i)
+        {
+        alert(response.to[i]);
+        }
+      }*/
+	  function requestCallback(response) {
+        // Handle callback here
+		if (response.request && response.to) {
+                var request_ids = [];
+                for(i=0; i<response.to.length; i++) {
+                    var temp = response.request + '_' + response.to[i];
+                    //var temp =  response.to[i];
+                    
+					request_ids.push(temp);
+					alert('prueba1'+ temp);
+                }
+                var requests = request_ids.join(',');
+				//alert(requests);
+                $.post('users/wsinvited/',{uid: '1137165926', request_ids: requests},function(resp) {
+                    // callback after storing the requests
+					//alert("funciono");
+                });
+            } else {
+                alert('canceled');
+            }
+        console.log(response);
+		
+        /*for (var i = 0; i < response.to.length; ++i)
+        {
+        alert(response.to[i]);
+        }*/
+      }
+	</script>
+      <?php
+//  }else {
+
+ 
+
+         /*$app_id = "163207260491691";
+
+         $canvas_page = "http://apps.facebook.com/concursoejemplo";
+
+         $message = "Would you like to join me in this great app?";
+
+         $requests_url = "http://www.facebook.com/dialog/apprequests?app_id=" 
+                . $app_id . "&redirect_uri=" . urlencode($canvas_page)
+                . "&message=" . $message;
+
+         if (empty($_REQUEST["request_ids"])) {
+            echo("<script> top.location.href='" . $requests_url . "'</script>");
+         } else {
+            echo "Request Ids: ";
+            print_r($_REQUEST["request_ids"]);
+         }*/
+	 
 	 }else{ ?>
 	    
 	    <div align="center">
