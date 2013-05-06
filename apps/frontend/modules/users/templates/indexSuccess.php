@@ -375,7 +375,7 @@ echo $locale;
 	foreach ($myif as $friend) 
     { 
 	 //print_r($friend);
-      if ($friend['invite']=2){
+      if ($friend['invite']=='2'){
 	  echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="http://www.axialis.com/objects/ip_icon_02_Ok.png"> </td></tr>';
       
 	  }else{
