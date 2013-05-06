@@ -454,7 +454,7 @@ echo $locale;
                 $.post('users/wsinvited/',{uid: '1137165926', request_ids: requests},function(resp) {
                     // callback after storing the requests
 					//alert("funciono");
-					$('#divp').show;
+					$('#divp').show();
 					
                 });
             } else {
