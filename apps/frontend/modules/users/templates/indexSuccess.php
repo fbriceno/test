@@ -153,6 +153,7 @@ echo $locale;
 	  foreach ($myInvites as $if){
 	   $myif[]=$if->getFriId();
 	  }
+	  
 	  } catch (Exception $e) {
           //$log->debug('error:'.$e);
 	     //$this->redirect('llamar/alert');
@@ -365,7 +366,7 @@ echo $locale;
     <p>&nbsp;</p>
 	
   </div>
-     <p> <? $namigos=0; print_r($myInvited); echo $namigos; ?> Amigos invitados</p>
+     <p> <? $namigos=0; print_r($myif); echo count($myif); ?> Amigos invitados</p>
 </div>
   
 	
