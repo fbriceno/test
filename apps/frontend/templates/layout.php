@@ -40,7 +40,9 @@
 
       function sendRequestViaMultiFriendSelector() {
         FB.ui({method: 'apprequests',
-          message: 'My Great Request'
+          message: 'My Great Request',
+          filters:['app_non_users'],
+          max_recipients: 10
         }, requestCallback);
       }
       
