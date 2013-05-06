@@ -106,12 +106,17 @@ if ($userf) {
 
 
 
-//$signed_request = $facebook->getSignedRequest();
-//$page_id = $signed_request["page"]["id"];
-//$page_admin = $signed_request["page"]["admin"];
-//$like_status = $signed_request["page"]["liked"];
-//$country = $signed_request["user"]["country"];
-//$locale = $signed_request["user"]["locale"];
+$signed_request = $facebook->getSignedRequest();
+$page_id = $signed_request["page"]["id"];
+$page_admin = $signed_request["page"]["admin"];
+$like_status = $signed_request["page"]["liked"];
+$country = $signed_request["user"]["country"];
+$locale = $signed_request["user"]["locale"];
+echo $page_id;
+echo $page_admin;
+echo $like_status;
+echo $country;
+echo $locale;
 
 
 
