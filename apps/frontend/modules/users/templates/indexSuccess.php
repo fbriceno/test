@@ -368,9 +368,9 @@ echo $locale;
 	echo "<ul>"; 
 	foreach ($myif as $friend) 
     { 
-	 print_r($friend);
+	 //print_r($friend);
 	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
-      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
+      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" />'. $friend{'name'} . '</li>';
     }
     echo "</ul><br/><br/>"; ?></p>
 	
