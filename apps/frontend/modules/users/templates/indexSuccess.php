@@ -151,7 +151,8 @@ echo $locale;
       $ci->add(FriendsPeer::FRI_INVITE,'1');
       $myInvites = FriendsPeer::doSelect($ci);
 	  foreach ($myInvites as $if){
-	   $myif[]=$if->getFriId();
+	   $myif['id'][]=$if->getFriId();
+	   $myif['name'][]=$if->getFriName();
 	  }
 	  
 	  } catch (Exception $e) {
@@ -363,10 +364,19 @@ echo $locale;
     </p>
   <div>
     <p>Lista de amigos invitados</p>
-    <p>&nbsp;</p>
+    <p>&nbsp;
+	<? 
+	echo "<ul>"; 
+	foreach ($myif as $friend) 
+    {
+	  echo '<img src="https://graph.facebook.com/'.$friend['id']. '/picture">';
+      echo '<li style="display:inline;"><fb:profile-pic uid="'.$friend['id'].'" width="32" height="32" linked="true" /></li>';
+    }
+    echo "</ul><br/><br/>"; ?></p>
 	
   </div>
      <p> <? $namigos=0; print_r($myif); echo count($myif); ?> Amigos invitados</p>
+	 
 </div>
   
 	
