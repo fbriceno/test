@@ -151,8 +151,7 @@ echo $locale;
       $ci->add(FriendsPeer::FRI_INVITE,'1');
       $myInvites = FriendsPeer::doSelect($ci);
 	  foreach ($myInvites as $if){
-	   $myif['id'][]=$if->getFriId();
-	   $myif['name'][]=$if->getFriName();
+	   $myif[]={"id"=>$if->getFriId(),"name"=>$if->getFriName()};
 	  }
 	  
 	  } catch (Exception $e) {
