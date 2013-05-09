@@ -112,7 +112,7 @@ $page_admin = $signed_request["page"]["admin"];
 $like_status = $signed_request["page"]["liked"];
 $country = $signed_request["user"]["country"];
 $locale = $signed_request["user"]["locale"];
-echo "variables";
+//echo "variables";
 echo $page_id;
 echo $page_admin;
 echo $like_status;
@@ -356,11 +356,11 @@ echo $locale;
     <script src="http://connect.facebook.net/en_US/all.js"></script>
    <div>
    <p>
-      <input type="button"
+      <!--<input type="button"
         onclick="sendRequestToRecipients(); return false;"
         value="Send Request to Users Directly"
       />
-      <input type="text" value="User ID" name="user_ids" />
+      <input type="text" value="User ID" name="user_ids" /> -->
       </p>
     <p>
     <input type="button"
