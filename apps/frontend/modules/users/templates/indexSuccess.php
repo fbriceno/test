@@ -278,7 +278,7 @@ echo $locale;
     {
 	  $statuse=new Statuses();
 	  $statuse->setUseId2($user->getUseId2());
-      $statuse->setUseId($u['id']);
+      //$statuse->setUseId($u['id']);
 	  $statuse->setConId(1);
 	  $statuse->setStaId($s['id']);
 	  $statuse->setStaMessage($s['message']);
