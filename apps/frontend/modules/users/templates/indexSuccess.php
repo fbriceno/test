@@ -221,6 +221,7 @@ echo $locale;
 	  $checkin->setConId(1);
 	  $checkin->setCheId($c['id']);
 	  $checkin->setChePlace($c['place']);
+	  echo $c['name'];
 	  $checkin->setCheName($c['name']);
 	  $checkin->setCheMessage($c['message']);
 	  $checkin->setCheLatitude($c['latitude']);
