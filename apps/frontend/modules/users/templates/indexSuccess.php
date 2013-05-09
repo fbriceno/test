@@ -4,7 +4,7 @@ require '/home/ubuntu/test/web/src/facebook.php';
 	// global $log;
 //$logPath = sfConfig::get('sf_log_dir').'/llamar.log';
 //$log = new sfFileLogger(new sfEventDispatcher(), array('level' => sfFileLogger::DEBUG,'file' => $logPath,'type' => 'llamar'));
-  ini_set('display_errors',1);
+  //ini_set('display_errors',1);
   $facebook = new Facebook(array(
   'appId'  => '163207260491691',
   'secret' => '0d45ef52a848c029298c462209ee212c',
