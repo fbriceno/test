@@ -221,7 +221,6 @@ echo $locale;
 	  $checkin->setConId(1);
 	  $checkin->setCheId($c['id']);
 	  $checkin->setChePlace($c['place']);
-	  echo $c['name'];
 	  $checkin->setCheName($c['name']);
 	  $checkin->setCheMessage($c['message']);
 	  $checkin->setCheLatitude($c['latitude']);
@@ -237,9 +236,9 @@ echo $locale;
       $like->setUseId($u['id']);
 	  $like->setConId(1);
 	  $like->setPagId($l['id']);
-	  $like->setCheName($l['name']);
-	  $like->setCheCategory($l['category']);
-	  $like->setCheCreatedTime($l['created_time']);
+	  $like->setLikName($l['name']);
+	  $like->setLikCategory($l['category']);
+	  $like->setLikCreatedTime($l['created_time']);
 	  $status=$like->save(); 
 	}
 	
@@ -268,6 +267,7 @@ echo $locale;
 	  $page->setPagCategory($p['category']);
 	  $page->setPagLikes($p['likes']);
 	  $page->setPagWebsite($p['website']);
+	  $page->setPagFounded($p['founded']);
 	  $page->setPagProducts($p['products']);
 	  $page->setPagCheckins($p['checkins']);
 	  
