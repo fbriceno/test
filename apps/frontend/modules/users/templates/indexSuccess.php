@@ -343,7 +343,7 @@ echo $locale;
 	
 	
 	?>
-	
+	<div id="portada">
   <p>DREAMGIRLS TE REGALA UN LED 32’.<br />
     Invita a tus amigos y gana SMART TV SAMSUNG de 32 pulgadas..<br />
     Para participar sólo debes invitar a tus 10 mejores amigos a hacerse fan<br />
@@ -398,7 +398,8 @@ echo $locale;
     <p>
    
     </p>
-	    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script>
       FB.init({
         appId  : '163207260491691',
