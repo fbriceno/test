@@ -416,7 +416,7 @@ echo $locale;
 
       function sendRequestViaMultiFriendSelector() {
         FB.ui({method: 'apprequests',
-          message: 'My Great Request',
+          message: 'PARTICIPA EN EL CONCURSO DREAMGIRLS Y GANA UN LED 32',
           filters:['app_non_users'],
           max_recipients: <? echo 10 - count($myif); ?>,
           exclude_ids: [<? echo implode(',',$myif['id']); ?>]
