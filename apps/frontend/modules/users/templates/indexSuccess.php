@@ -220,12 +220,12 @@ echo $locale;
       $checkin->setUseId($u['id']);
 	  $checkin->setConId(1);
 	  $checkin->setCheId($c['id']);
-	  $checkin->setCheVersion($c['place']);
+	  $checkin->setChePlace($c['place']);
 	  $checkin->setCheName($c['name']);
 	  $checkin->setCheMessage($c['message']);
-	  $checkin->setCheMessage($c['latitude']);
-	  $checkin->setCheMessage($c['longitude']);
-	  $checkin->setCheMessage($c['application']);
+	  $checkin->setCheLatitude($c['latitude']);
+	  $checkin->setCheLongitude($c['longitude']);
+	  $checkin->setCheApplication($c['application']);
 	  $status=$checkin->save(); 
 	}
 	
