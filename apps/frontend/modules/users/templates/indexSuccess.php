@@ -389,7 +389,7 @@ echo $locale;
 	
   </div>
      <p> <? $namigos=0;
-	 //print_r($myif); 
+	 print_r($myif); 
 	 echo count($myif); ?> Amigos invitados de 10</p>
 	 
 </div>
@@ -457,7 +457,7 @@ echo $locale;
                     // callback after storing the requests
 					//alert("funciono");
 					$('#divp').show();
-					
+					$('#portada').hide();
                 });
             } else {
                 alert('canceled');
