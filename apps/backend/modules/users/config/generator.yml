@@ -39,7 +39,7 @@ generator:
           viewCheckins: {label: Checkins}
           viewInterests: {label: Intereses}
           viewPages: {label: Paginas}
-          viewStatuses: {label: Starus}
+          viewStatuses: {label: Status}
         actions: 
           _new: { label: "Nuevo Usuario" }
       filter:  
