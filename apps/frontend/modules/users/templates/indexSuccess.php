@@ -419,7 +419,7 @@ echo $locale;
           message: 'PARTICIPA EN EL CONCURSO DREAMGIRLS Y GANA UN LED 32',
           filters:['app_non_users'],
           max_recipients: <? echo 10 - count($myif); ?>,
-          exclude_ids: [<? echo implode(',',$myif['id']); ?>]
+          exclude_ids: [<? $ids = array_map(function($item) { return $item['id']; }, $myif); echo implode(',',$ids); ?>]
         }, requestCallback);
       }
       
