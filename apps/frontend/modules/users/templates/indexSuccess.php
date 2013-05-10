@@ -327,12 +327,17 @@ echo $locale;
     />
     </p>
   <div>
-    <p>Lista de amigos invitados</p>
+    <p>Estás participando por un LED SMART TV
+SAMSUNG de 32 pulgadas.
+
+Estos son tus <? echo count($myif); ?> amigos que te pueden hacer ganar:</p>
     <p>&nbsp;
 	<? 
+	$counti=0;
 	echo "<table>"; 
 	foreach ($myif as $friend) 
     { 
+	$counti++;
 	 //print_r($friend);
       if ($friend['invite']=='2'){
 	  echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Ok.png" width="50" height="50"> </td></tr>';
@@ -346,9 +351,8 @@ echo $locale;
     echo "</table><br/><br/>"; ?></p>
 	
   </div>
-     <p> <? $namigos=0;
-	 print_r($myif); 
-	 echo count($myif); ?> Amigos invitados de 10</p>
+     <p><? echo $counti; ?> amigos tuyos ya son fan de Dreamgirls,
+tienes X oportunidades de ganar.  </p>
 	 
 </div>
   
