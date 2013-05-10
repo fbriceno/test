@@ -16,7 +16,7 @@ class usersActions extends autoUsersActions
   public function executeViewFriends($request) { 
     $this->getUser()->setAttribute( 'friend.filters',   
     array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
-    $this->redirect($this->generateUrl('friend')); 
+    $this->redirect($this->generateUrl('friends')); 
   }
   
   public function executeSetMaxPerPage(sfWebRequest $request)
