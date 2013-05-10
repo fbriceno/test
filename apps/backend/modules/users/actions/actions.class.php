@@ -45,7 +45,7 @@ class usersActions extends autoUsersActions
   }
   public function executeViewStatuses($request) { 
     $this->getUser()->setAttribute( 'status.filters',   
-    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    array('use_id2' => $request->getParameter('use_id2')), 'admin_module' ); 
     $this->redirect($this->generateUrl('statuses')); 
   }
   
