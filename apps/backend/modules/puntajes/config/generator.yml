@@ -19,7 +19,7 @@ generator:
         pun_valor:       { label: Valor }
       list:
         title:        Lista de Puntajes
-        display:     [pun_id, pun_nombre, pun_valor]
+        display:     [pun_id,con_id, pun_nombre, pun_valor]
         batch_actions:
           #aprobar:  ~
           #rechazar: ~
@@ -31,11 +31,11 @@ generator:
         actions: 
           _new: { label: "Nuevo Puntaje" }
       filter:  
-        display:      [pun_id, pun_nombre, pun_valor]
+        display:      [pun_id,con_id, pun_nombre, pun_valor]
       form:    ~
       edit:
         display:  
-           Informacion Puntaje:     [pun_id, pun_nombre, pun_valor]
+           Informacion Puntaje:     [pun_id,con_id, pun_nombre, pun_valor]
         title:        Edicion de Puntaje
         actions:
           _list:        { label: Cancelar  }
@@ -43,7 +43,7 @@ generator:
           _delete:      { label: Eliminar  }
       new:    
         display: 
-           Informacion Puntaje:     [pun_id, pun_nombre, pun_valor]
+           Informacion Puntaje:     [pun_id,con_id, pun_nombre, pun_valor]
         title:        Nuevo Puntaje
         actions:
            _list:         { label: Cancelar  }
