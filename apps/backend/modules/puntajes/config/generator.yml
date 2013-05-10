@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  
         pun_id:       { label: Id }
+        con_id:       { label: Concurso }
         pun_nombre:       { label: Nombre }
         pun_valor:       { label: Valor }
       list:
