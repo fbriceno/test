@@ -1,1 +1,1 @@
-<?php echo $imagen->getImaThumb("&",ESC_RAW)?> 
+<?php echo $usuario->getUsePuntos("&",ESC_RAW)?> 
