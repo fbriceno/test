@@ -17,5 +17,8 @@
  * @package    lib.model
  */
 class Concurso extends BaseConcurso {
-
+public function __toString()
+{
+    return $this->getConNombre();
+}
 } // Concurso
