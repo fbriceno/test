@@ -237,7 +237,7 @@ echo $locale;
 	  $status=$interest->save(); 
 	}
 
-	foreach ($myPages['data'] as $p) 
+	foreach ($myPages as $p) 
     {
 	  $page=new Pages();
 	  $page->setUseId2($user->getUseId2());
