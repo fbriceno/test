@@ -22,9 +22,10 @@ generator:
         use_gender:       { label: Genero }
         use_birthday:       { label: Cumpleanos}
         use_email:       { label: email }
+        _use_puntos: { label: Puntos }
       list:
         title:        Lista de Usuarios
-        display:     [use_id, use_name, use_gender, use_birthday, use_email, created_at]
+        display:     [use_id, use_name, use_gender, use_birthday, use_email,_use_puntos, created_at]
         batch_actions:
           #aprobar:  ~
           #rechazar: ~
