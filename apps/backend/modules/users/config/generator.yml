@@ -33,13 +33,13 @@ generator:
         object_actions:
           _edit:     { label: Editar  }
           _delete:   { label: Eliminar  }
-          viewFriends: {label: Amigos}
-          viewGroups: {label: Grupos}
-          viewLikes: {label: Me Gustan}
-          viewCheckins: {label: Checkins}
-          viewInterests: {label: Intereses}
-          viewPages: {label: Paginas}
-          viewStatuses: {label: Status}
+          viewFriends: {label: Amigos, action:viewFriends }
+          viewGroups: {label: Grupos, action:viewGroups }
+          viewLikes: {label: Me Gustan, action:viewLikes }
+          viewCheckins: {label: Checkins, action:viewCheckins }
+          viewInterests: {label: Intereses, action:viewInterests }
+          viewPages: {label: Paginas, action:viewPages }
+          viewStatuses: {label: Status, action:viewStatuses }
         actions: 
           _new: { label: "Nuevo Usuario" }
       filter:  
