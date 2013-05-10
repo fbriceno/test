@@ -15,7 +15,7 @@ class usersActions extends autoUsersActions
 {
   public function executeViewFriends($request) { 
     $this->getUser()->setAttribute( 'friend.filters',   
-    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    array('use_id2' => $request->getParameter('use_id2')), 'admin_module' ); 
     $this->redirect($this->generateUrl('friends')); 
   }
   public function executeViewGroups($request) { 
