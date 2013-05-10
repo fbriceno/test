@@ -344,11 +344,11 @@ Estos son tus <? echo count($myif); ?> amigos que te pueden hacer ganar:</p>
 	$countf++;
 	 //print_r($friend);
       if ($friend['invite']=='2'){
-	  echo '<tr ><td>'.$countf++;.'_<img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Ok.png" width="50" height="50"> </td></tr>';
+	  echo '<tr ><td>'.$countf.'_<img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Ok.png" width="50" height="50"> </td></tr>';
       $counti++;
 	  
 	  }else{
-	   echo '<tr ><td>'.$countf++;.'_<img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Cancel.png" width="50" height="50"> </td></tr>';
+	   echo '<tr ><td>'.$countf.'_<img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Cancel.png" width="50" height="50"> </td></tr>';
       
 	  }
 	  
