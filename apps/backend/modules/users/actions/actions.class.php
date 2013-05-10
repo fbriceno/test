@@ -13,7 +13,7 @@ require_once dirname(__FILE__).'/../lib/usersGeneratorHelper.class.php';
  */
 class usersActions extends autoUsersActions
 {
-  public function executeFriends($request) { 
+  public function executeViewFriends($request) { 
     $this->getUser()->setAttribute( 'friend.filters',   
     array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
     $this->redirect($this->generateUrl('friend')); 
