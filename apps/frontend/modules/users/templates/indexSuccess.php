@@ -351,8 +351,8 @@ Estos son tus <? echo count($myif); ?> amigos que te pueden hacer ganar:</p>
     echo "</table><br/><br/>"; ?></p>
 	
   </div>
-     <p><? echo $counti; ?> amigos tuyos ya son fan de Dreamgirls,
-tienes X oportunidades de ganar.  </p>
+     <p> amigos tuyos ya son fan de Dreamgirls,
+tienes <? if ($counti==10){echo "20";}else{echo $counti;} ?> oportunidades de ganar.  </p>
 	 
 </div>
   
