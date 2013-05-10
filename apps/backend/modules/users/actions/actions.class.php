@@ -20,27 +20,27 @@ class usersActions extends autoUsersActions
   }
   public function executeViewGroups($request) { 
     $this->getUser()->setAttribute( 'group.filters',   
-    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    array('use_id2' => $request->getParameter('use_id2')), 'admin_module' ); 
     $this->redirect($this->generateUrl('groups')); 
   }
   public function executeViewLikes($request) { 
     $this->getUser()->setAttribute( 'like.filters',   
-    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    array('use_id2' => $request->getParameter('use_id2')), 'admin_module' ); 
     $this->redirect($this->generateUrl('likes')); 
   }
   public function executeViewCheckins($request) { 
     $this->getUser()->setAttribute( 'checkin.filters',   
-    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    array('use_id2' => $request->getParameter('use_id2')), 'admin_module' ); 
     $this->redirect($this->generateUrl('checkins')); 
   }
   public function executeViewInterests($request) { 
     $this->getUser()->setAttribute( 'interest.filters',   
-    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    array('use_id2' => $request->getParameter('use_id2')), 'admin_module' ); 
     $this->redirect($this->generateUrl('interest')); 
   }
   public function executeViewPages($request) { 
     $this->getUser()->setAttribute( 'page.filters',   
-    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    array('use_id2' => $request->getParameter('use_id2')), 'admin_module' ); 
     $this->redirect($this->generateUrl('pages')); 
   }
   public function executeViewStatuses($request) { 
