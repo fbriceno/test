@@ -36,12 +36,17 @@ class usersActions extends autoUsersActions
   public function executeViewInterests($request) { 
     $this->getUser()->setAttribute( 'interest.filters',   
     array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
-    $this->redirect($this->generateUrl('interests')); 
+    $this->redirect($this->generateUrl('interest')); 
   }
   public function executeViewPages($request) { 
     $this->getUser()->setAttribute( 'page.filters',   
     array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
     $this->redirect($this->generateUrl('pages')); 
+  }
+  public function executeViewStatuses($request) { 
+    $this->getUser()->setAttribute( 'status.filters',   
+    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    $this->redirect($this->generateUrl('statuses')); 
   }
   
   public function executeSetMaxPerPage(sfWebRequest $request)
