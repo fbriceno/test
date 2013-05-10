@@ -17,5 +17,12 @@
  * @package    lib.model
  */
 class Users extends BaseUsers {
-
+public function getUsePuntos(){ 
+      $c1= new Criteria();
+      $c1->add(FriendsPeer::FRI_INVITE, '1');
+      $c2= new Criteria();
+      $c2->add(FriendsPeer::FRI_INVITE, '2');
+      
+        return  $this->countFriendss($c1);.'-'.$this->countFriendss($c2); //$this->getConcurso(); $this->getFriendss;
+    } 
 } // Users
