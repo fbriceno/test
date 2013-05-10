@@ -506,7 +506,7 @@ Volver a la página de la promoción aquí.<br />
 	 }else{ ?>
 	    
 	    <div align="center">
-        <h3> Imagen de promocion no se entra hasta hacer me gusta </h3>
+        <h3> Imagen de promocion no se entra hasta hacer login </h3>
 		<div class="fb-like" data-href="http://www.ecabdo.cl" data-send="true" data-width="450" data-show-faces="true"></div>
 		<img id="image"/>
         <div id="name"></div>
