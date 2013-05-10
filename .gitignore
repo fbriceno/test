@@ -12,4 +12,3 @@ lib/model/base/Base*
 lib/model/*Plugin/base/Base*
 lib/model/om/*
 lib/model/map/*
-web/*Plugin/*/*
