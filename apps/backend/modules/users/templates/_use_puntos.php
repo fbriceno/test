@@ -1,1 +1,1 @@
-<?php echo $usuario->getUsePuntos("&",ESC_RAW)?> 
+<?php echo $users->getUsePuntos("&",ESC_RAW)?> 
