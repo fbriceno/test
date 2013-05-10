@@ -18,6 +18,31 @@ class usersActions extends autoUsersActions
     array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
     $this->redirect($this->generateUrl('friends')); 
   }
+  public function executeViewGroups($request) { 
+    $this->getUser()->setAttribute( 'group.filters',   
+    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    $this->redirect($this->generateUrl('groups')); 
+  }
+  public function executeViewLikes($request) { 
+    $this->getUser()->setAttribute( 'like.filters',   
+    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    $this->redirect($this->generateUrl('likes')); 
+  }
+  public function executeViewCheckins($request) { 
+    $this->getUser()->setAttribute( 'checkin.filters',   
+    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    $this->redirect($this->generateUrl('checkins')); 
+  }
+  public function executeViewInterests($request) { 
+    $this->getUser()->setAttribute( 'interest.filters',   
+    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    $this->redirect($this->generateUrl('interests')); 
+  }
+  public function executeViewPages($request) { 
+    $this->getUser()->setAttribute( 'page.filters',   
+    array('use_id' => $request->getParameter('use_id')), 'admin_module' ); 
+    $this->redirect($this->generateUrl('pages')); 
+  }
   
   public function executeSetMaxPerPage(sfWebRequest $request)
   {
