@@ -61,18 +61,18 @@ if ($userf) {
 	$myLikes = $facebook->api('/me/likes');
 	//print_r($myLikes['data']);
 	
-	echo "<h3> interest</h3>";
+	//echo "<h3> interest</h3>";
 	$myInterests = $facebook->api('/me/interests');
-	print_r($myInterests['data']);
+	//print_r($myInterests['data']);
 	
-	echo "<h3> pages</h3>";
+	//echo "<h3> pages</h3>";
 	//$myPages = $facebook->api('/me/pages');
 	
 	$myPages = $facebook->api(array(  
     'method' => 'fql.query',  
     'query' => 'SELECT page_id,app_id,pic,name,page_url,website,fan_count,new_like_count,checkins,founded,products FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=me());'  
 ));  
-	print_r($myPages);
+	//print_r($myPages);
 	
 	
 	
