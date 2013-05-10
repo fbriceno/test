@@ -336,16 +336,19 @@ Estos son tus <? echo count($myif); ?> amigos que te pueden hacer ganar:</p>
     
 	<? 
 	$counti=0;
+	$countf=0;
+	
 	echo "<table>"; 
 	foreach ($myif as $friend) 
     { 
-	$counti++;
+	$countf++;
 	 //print_r($friend);
       if ($friend['invite']=='2'){
-	  echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Ok.png" width="50" height="50"> </td></tr>';
-      
+	  echo '<tr ><td>'.$countf++;.'_<img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Ok.png" width="50" height="50"> </td></tr>';
+      $counti++;
+	  
 	  }else{
-	   echo '<tr ><td><img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Cancel.png" width="50" height="50"> </td></tr>';
+	   echo '<tr ><td>'.$countf++;.'_<img src="https://graph.facebook.com/'.$friend['id']. '/picture"></td><td>'. $friend{'name'} . '</td><td><img src="/img/Cancel.png" width="50" height="50"> </td></tr>';
       
 	  }
 	  
@@ -388,23 +391,7 @@ tienes <? echo $counti; ?> oportunidades de ganar.  </p> <?} ?>
         }, requestCallback);
       }
       
-      /*function requestCallback(response) {
-        // Handle callback here
-		if(reponse){ 
-           alert(response.request_ids);
-          $.ajax({
-             type: "POST",
-             url: "your_file.php",
-             req_ids="+response.request_ids,
-             });
-        }
-        console.log(response);
-		
-        for (var i = 0; i < response.to.length; ++i)
-        {
-        alert(response.to[i]);
-        }
-      }*/
+      
 	  function requestCallback(response) {
         // Handle callback here
 		if (response.request && response.to) {
@@ -429,10 +416,6 @@ tienes <? echo $counti; ?> oportunidades de ganar.  </p> <?} ?>
             }
         console.log(response);
 		
-        /*for (var i = 0; i < response.to.length; ++i)
-        {
-        alert(response.to[i]);
-        }*/
       }
 	</script>
     <div id="divp" style="display: none;">
