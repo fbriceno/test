@@ -309,7 +309,8 @@ echo $locale;
      }
 	?>
 	<div id="portada">
-  <p>DREAMGIRLS TE REGALA UN LED 32’.<br />
+  <? if(count($myif)==0){
+  ?><p>DREAMGIRLS TE REGALA UN LED 32’.<br />
     Invita a tus amigos y gana SMART TV SAMSUNG de 32 pulgadas..<br />
     Para participar sólo debes invitar a tus 10 mejores amigos a hacerse fan<br />
     de Dreamgirls.<br />
@@ -317,6 +318,11 @@ echo $locale;
     de ganar. Si todos tus amigos aceptan tendrás el doble de oportunidades<br />
     de ganar.
 </p>
+   <? } else {?> <p>Estás participando por un LED SMART TV
+SAMSUNG de 32 pulgadas.
+
+Estos son tus <? echo count($myif); ?> amigos que te pueden hacer ganar:</p>
+    <p>&nbsp; </p> <? } ?>
    <div id="fb-root"></div>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
    <div>
@@ -327,11 +333,7 @@ echo $locale;
     />
     </p>
   <div>
-    <p>Estás participando por un LED SMART TV
-SAMSUNG de 32 pulgadas.
-
-Estos son tus <? echo count($myif); ?> amigos que te pueden hacer ganar:</p>
-    <p>&nbsp;
+    
 	<? 
 	$counti=0;
 	echo "<table>"; 
