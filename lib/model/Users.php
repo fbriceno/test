@@ -23,6 +23,6 @@ public function getUsePuntos(){
       $c2= new Criteria();
       $c2->add(FriendsPeer::FRI_INVITE, '2');
       
-        return  $this->countFriendss($c1);.'-'.$this->countFriendss($c2); //$this->getConcurso(); $this->getFriendss;
+        return  $this->countFriendss($c1).'-'.$this->countFriendss($c2); //$this->getConcurso(); $this->getFriendss;
     } 
 } // Users
