@@ -31,7 +31,7 @@ if ($userf) {
 //));
  $params = array(
     //"redirect_uri" => REDIRECT_URI,
-    "scope" => "email,read_stream,publish_stream,user_birthday,user_checkins,user_groups,user_likes,user_status,friends_birthday");
+    "scope" => "email,read_stream,publish_stream,user_birthday,user_checkins,user_groups,user_likes,user_interests,user_status,friends_birthday");
     //echo '<a href="' . $fb->getLoginUrl($params) . '">Login</a>';
 	?><div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -42,7 +42,7 @@ if ($userf) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script> 
 
-<div class="fb-login-button" scope="email,read_stream,publish_stream,user_photos,user_videos,user_birthday,user_checkins,user_groups,user_status,friends_birthday" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+<div class="fb-login-button" scope="email,read_stream,publish_stream,user_birthday,user_checkins,user_groups,user_likes,user_interests,user_status,friends_birthday" data-show-faces="true" data-width="200" data-max-rows="1"></div>
 <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"> <?
     echo '<a href="' . $loginUrl = $facebook->getLoginUrl($params) . '">Login</a>';
 	
